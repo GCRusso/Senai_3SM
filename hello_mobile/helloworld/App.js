@@ -10,7 +10,7 @@ export default function App() {
 
   if (!fontsLoaded) {
     return null;
-  }''
+  }
 
   function pressOutput() {
     alert('Vencedor da copa pistão! VRUUUM')
@@ -21,6 +21,8 @@ export default function App() {
       <Text style={styles.title}>Hello World </Text>
 
       <Text style={styles.subtitle}>React Native</Text>
+
+    <Image />
 
       <Image style={styles.image} source={require("./assets/images/mcqueen.png")} />
 
