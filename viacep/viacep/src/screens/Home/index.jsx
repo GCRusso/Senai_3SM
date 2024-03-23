@@ -46,12 +46,13 @@ export function Home() {
 
     return (
         <ScrollForm>
+            
             <ContainerForm>
                 <BoxInput
                     textLabel="Informar CEP:"
                     placeholder="Cep..."
-                    KeyType="numeric"
-                    maxLenght={8}
+                    keyType='numeric'
+                    maxLength={8}
                     editable={true}
                     fieldValue={cep}
                     onChangeText={(tx) => setCep(tx)}
@@ -60,7 +61,7 @@ export function Home() {
                 <BoxInput
                     textLabel="Bairro"
                     placeholder="Bairro"
-                    KeyType="text"
+                    keyType="default"
                     editable={true}
                     fieldValue={bairro}
                 />
@@ -68,7 +69,7 @@ export function Home() {
                 <BoxInput
                     textLabel="Logradouro / Rua"
                     placeholder="Logradouro"
-                    KeyType="text"
+                    keyType="default"
                     editable={true}
                     fieldValue={logradouro}
                 />
@@ -76,7 +77,7 @@ export function Home() {
                 <BoxInput
                     textLabel="Estado"
                     placeholder="Estado"
-                    KeyType="text"
+                    keyType="default"
                     editable={true}
                     fieldValue={estado}
                 />
@@ -84,7 +85,7 @@ export function Home() {
                 <BoxInput
                     textLabel="UF"
                     placeholder="UF"
-                    KeyType="text"
+                    keyType="default"
                     editable={true}
                     fieldValue={uf}
                 />
