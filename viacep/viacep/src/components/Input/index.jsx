@@ -1,6 +1,5 @@
 import {InputText } from './style';
 
-
 export function Input({
     placeholder,
     editable,

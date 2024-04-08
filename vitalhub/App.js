@@ -1,17 +1,17 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View} from 'react-native';
-import { Home } from './src/screens/Home';
+import { StyleSheet, Text, View, TextInput} from 'react-native';
+import { Login } from './src/screens/login';
+import { useFonts, Montserrat_500Medium, Montserrat_800ExtraBold} from '@expo-google-fonts/montserrat';
+import { TouchableOpacity } from "react-native"
 
-//Import de fontes
-import { useFonts, Economica_700Bold, Economica_400Regular } from '@expo-google-fonts/economica';
-import { Header } from './src/components/Header';
 
 export default function App() {
 
   //Fontes importadas
   const [fontLoaded, fontError] = useFonts({
-    Economica_700Bold,
-    Economica_400Regular
+    Montserrat_500Medium,
+    Montserrat_800ExtraBold
+
   })
 
   //Validação das fontes
@@ -20,14 +20,9 @@ export default function App() {
   }
 
 
-
-  //!RETORNO
   return (
     <View style={styles.container}>
-      
-      <Header />
-
-      <Home />
+      <Login />
 
     </View>
   );
@@ -36,6 +31,7 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
   },
