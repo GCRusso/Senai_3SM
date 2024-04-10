@@ -16,3 +16,13 @@ font-family: 'Montserrat_500Medium';
 padding-left: 16px;
 padding-right: 16px;
 `
+
+export const InputNumber = styled(InputText)`
+height: 62px;
+width: 65px;
+font-family: "Quicksand_500Medium";
+font-size: 50px;
+padding-top: 0px;
+padding-bottom: 0px;
+margin: 0px 0px 0px 0px;
+`

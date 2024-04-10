@@ -28,3 +28,7 @@ export const TextMake = styled(TextAcount)`
     color: #4D659D;
     margin-left: 2px;
 `
+
+export const TextMakeCriar = styled(TextMake)`
+    margin-top: 30px;
+`

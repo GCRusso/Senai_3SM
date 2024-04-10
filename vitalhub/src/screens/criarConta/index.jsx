@@ -1,21 +1,22 @@
-import { Text, TextAcount, TextMake, ViewText } from "./style";
+import { Text, TextAcount, TextMake, ViewText, TextMakeCriar } from "./style";
 import { Title } from "../../components/title/style"
 import { Logo } from "../../components/logo/style"
 import { Container } from "../../components/container/style";
 import { InputText } from "../../components/input/style"
 import { NormalButton, GoogleButton } from "../../components/button/index.jsx";
+import { Paragraph } from "../../components/paragraph/style.js";
 
-
-export const Login = ({ navigation }) => {
+export const CriarConta = ({ navigation }) => {
     return (
         <Container>
-            
             <Logo source={require("../../../assets/images/VitalHub_Logo.png")} />
 
-            <Title>Entrar ou criar conta</Title>
+            <Title>Criar conta</Title>
+
+            <Paragraph>Insira seu endereço de e-mail e senha para realizar seu cadastro.</Paragraph>
 
             <InputText
-                placeholder={"Usuário ou E-mail"}
+                placeholder={"E-mail"}
                 placeholderTextColor={'#34898F'}
                 autoCapitalize={'none'}
                 keyBoardType={'email'}
@@ -28,23 +29,21 @@ export const Login = ({ navigation }) => {
                 autoCapitalize={'none'}
             />
 
-            <Text>Esqueceu sua senha?</Text>
-            
+            <InputText
+                placeholder={"Confirmar Senha"}
+                secureTextEntry={true}
+                placeholderTextColor={'#34898F'}
+                autoCapitalize={'none'}
+            />
+
             <NormalButton
-                title={'Entrar'}
-                onPress={() => navigation.navigate('RecuperarSenha')}
-            />
-            
-            <GoogleButton
-                title={"entrar com o google"}
+                title={'Cadastrar'}
+                onPress={() => navigation.navigate('Login')}
             />
 
-            <ViewText>
-                <TextAcount>Não tem conta?</TextAcount>
-                <TextMake>Crie uma conta agora!</TextMake>
-            </ViewText>
-
+            <TextMakeCriar>Cancelar</TextMakeCriar>
         </Container>
+
 
     )
 };

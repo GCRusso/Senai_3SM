@@ -28,3 +28,13 @@ export const TextMake = styled(TextAcount)`
     color: #4D659D;
     margin-left: 2px;
 `
+
+export const TextMakeEmail = styled(TextMake)`
+    margin-top: 30px;
+`
+
+export const ViewInput = styled.View`
+    flex-direction: row;
+    width: 320px;
+    justify-content: space-between;
+`

@@ -14,7 +14,6 @@ export const ViewText = styled.View`
     height: 20px;
     width: 284px;
     margin-top: 30px;
-    margin-bottom: 50px;
 `
 
 export const TextAcount = styled.Text`

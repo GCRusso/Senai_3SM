@@ -1,9 +1,8 @@
 import styled from "styled-components";
 
 export const Container = styled.View`
-    height: 80% ;
-    width: 80%;
     background-color: #FFF;
     align-items: center;
-    justify-content: space-between;
+    flex: 1;
+    padding:0px 20px 0px 20px;
 `
