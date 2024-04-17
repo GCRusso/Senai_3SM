@@ -1,10 +1,10 @@
-import { Text, TextAcount, TextMake, ViewText, TextMakeCriar } from "./style";
 import { Title } from "../../components/title/style"
 import { Logo } from "../../components/logo/style"
 import { Container } from "../../components/container/style";
 import { InputText } from "../../components/input/style"
-import { NormalButton, GoogleButton } from "../../components/button/index.jsx";
+import { NormalButton } from "../../components/button/index.jsx";
 import { Paragraph } from "../../components/paragraph/style.js";
+import { LinkMedium } from "../../components/links/Style.js";
 
 export const CriarConta = ({ navigation }) => {
     return (
@@ -13,13 +13,16 @@ export const CriarConta = ({ navigation }) => {
 
             <Title>Criar conta</Title>
 
-            <Paragraph>Insira seu endereço de e-mail e senha para realizar seu cadastro.</Paragraph>
+            <Paragraph style={{ marginTop: 15, marginBottom: 20 }}>
+                Insira seu endereço de e-mail e senha para realizar seu cadastro.
+            </Paragraph>
 
             <InputText
                 placeholder={"E-mail"}
                 placeholderTextColor={'#34898F'}
                 autoCapitalize={'none'}
                 keyBoardType={'email'}
+
             />
 
             <InputText
@@ -27,6 +30,7 @@ export const CriarConta = ({ navigation }) => {
                 secureTextEntry={true}
                 placeholderTextColor={'#34898F'}
                 autoCapitalize={'none'}
+                style={{ marginTop: 15, marginBottom: 15 }}
             />
 
             <InputText
@@ -34,14 +38,19 @@ export const CriarConta = ({ navigation }) => {
                 secureTextEntry={true}
                 placeholderTextColor={'#34898F'}
                 autoCapitalize={'none'}
+                style={{ marginBottom: 30 }}
             />
 
             <NormalButton
                 title={'Cadastrar'}
                 onPress={() => navigation.navigate('Login')}
+
             />
 
-            <TextMakeCriar>Cancelar</TextMakeCriar>
+            <LinkMedium style={{ marginTop: 30 }}>
+                Cancelar
+            </LinkMedium>
+
         </Container>
 
 

@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Button = styled.TouchableOpacity`
-    width: 320px;
+    width: 90%;
     height: 44px;
     background-color: #496BBA;
     border: #496BBA;
@@ -9,7 +9,6 @@ export const Button = styled.TouchableOpacity`
     justify-content: center;
     border-radius: 5px;
     padding: 8px 12px;
-    margin-top: 30px;
 `
 
 export const ButtonTitle = styled.Text`
@@ -27,7 +26,25 @@ export const ButtonGoogle = styled(Button)`
     flex-direction: row;
 `
 
-export const TitleGoogle =styled(ButtonTitle)`
+export const TitleGoogle = styled(ButtonTitle)`
     color: #496BBA;
     
+`
+
+export const ButtonCon = styled.TouchableOpacity`
+    width: 85px;
+    height: 40px;
+    border-color: #60BFC5;
+    background-color: #FBFBFB;
+    border-width: 2px;
+    align-items : center;
+    justify-content: center;
+    border-radius: 5px;
+`
+
+export const TitleCon = styled.Text`
+    font-size: 14px;
+    color: #60BFC5;
+    font-family: 'Montserrat_500Medium';
+
 `

@@ -1,19 +1,23 @@
-import { Text, TextAcount, TextMake, ViewText, TextMakeEmail, ViewInput } from "./style";
+import { ViewInput } from "./style";
 import { Title } from "../../components/title/style"
 import { Logo } from "../../components/logo/style"
 import { Container } from "../../components/container/style";
-import { InputText, InputNumber } from "../../components/input/style"
-import { NormalButton, GoogleButton } from "../../components/button/index.jsx";
+import { InputNumber } from "../../components/input/style"
+import { NormalButton } from "../../components/button/index.jsx";
 import { Paragraph } from "../../components/paragraph/style.js";
+import { LinkMedium } from "../../components/links/Style.js";
 
 export const VerificarEmail = ({ navigation }) => {
     return (
         <Container>
-            <Logo source={require("../../../assets/images/VitalHub_Logo.png")} />
-            <Title>Verifique seu E-mail</Title>
-            <Paragraph>Digite o código de 4 dígitos enviados para o seu e-mail</Paragraph>
 
-            <ViewInput>
+            <Logo source={require("../../../assets/images/VitalHub_Logo.png")} />
+
+            <Title>Verifique seu E-mail</Title>
+
+            <Paragraph style={{ textAlign: 'center', marginTop: 15, marginBottom: 20 }}>Digite o código de 4 dígitos enviados para o seu e-mail</Paragraph>
+
+            <ViewInput style={{ marginTop: 20, marginBottom: 30 }}>
 
                 <InputNumber
                     keyBoardType={'number'}
@@ -43,7 +47,9 @@ export const VerificarEmail = ({ navigation }) => {
                 onPress={() => navigation.navigate('RedefinirSenha')}
             />
 
-            <TextMakeEmail>Reenviar código</TextMakeEmail>
+            <LinkMedium style={{ marginTop: 30 }}>
+                Reenviar código
+            </LinkMedium>
 
         </Container>
 

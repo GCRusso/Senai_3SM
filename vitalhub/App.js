@@ -17,6 +17,8 @@ import { Login } from './src/screens/login';
 import { VerificarEmail } from './src/screens/verificarEmail';
 import { RedefinirSenha } from './src/screens/redefinirSenha';
 import { CriarConta } from './src/screens/criarConta';
+import { Navegacao } from './src/screens/navegacao';
+import { ConsultationModal } from './src/components/consultationModal';
 
 
 export default function App() {
@@ -44,6 +46,11 @@ export default function App() {
 
       <Stack.Navigator screenOptions={{ headerShown: false }}>
 
+      <Stack.Screen
+          name='Navegacao'
+          component={Navegacao}
+        />
+
         <Stack.Screen
           name='Login'
           component={Login}
@@ -68,6 +75,11 @@ export default function App() {
         <Stack.Screen
           name='CriarConta'
           component={CriarConta}
+        />
+
+        <Stack.Screen
+          name='ConsultationModal'
+          component={ConsultationModal}
         />
 
       </Stack.Navigator>
