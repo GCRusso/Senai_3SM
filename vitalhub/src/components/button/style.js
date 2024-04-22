@@ -1,7 +1,9 @@
 import styled from "styled-components";
+import { Feather } from '@expo/vector-icons';
+
 
 export const Button = styled.TouchableOpacity`
-    width: 90%;
+    width: 320px;
     height: 44px;
     background-color: #496BBA;
     border: #496BBA;
@@ -47,4 +49,8 @@ export const TitleCon = styled.Text`
     color: #60BFC5;
     font-family: 'Montserrat_500Medium';
 
+`
+
+export const Return = styled.TouchableOpacity`
+position: fixed;
 `

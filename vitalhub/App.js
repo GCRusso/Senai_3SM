@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, TextInput} from 'react-native';
+import { StyleSheet, Text, View, TextInput } from 'react-native';
 import { TouchableOpacity } from "react-native"
 
 
@@ -19,6 +19,9 @@ import { RedefinirSenha } from './src/screens/redefinirSenha';
 import { CriarConta } from './src/screens/criarConta';
 import { Navegacao } from './src/screens/navegacao';
 import { ConsultationModal } from './src/components/consultationModal';
+import { SelecionarMedico } from './src/screens/selecionarMedico';
+import { SelecionarClinica } from './src/screens/selecionarClinica';
+import { AgendarConsulta} from './src/screens/agendarConsulta';
 
 
 export default function App() {
@@ -46,7 +49,7 @@ export default function App() {
 
       <Stack.Navigator screenOptions={{ headerShown: false }}>
 
-      <Stack.Screen
+        <Stack.Screen
           name='Navegacao'
           component={Navegacao}
         />
@@ -80,6 +83,21 @@ export default function App() {
         <Stack.Screen
           name='ConsultationModal'
           component={ConsultationModal}
+        />
+
+        <Stack.Screen
+          name='SelecionarMedico'
+          component={SelecionarMedico}
+        />
+
+        <Stack.Screen
+          name='SelecionarClinica'
+          component={SelecionarClinica}
+        />
+
+        <Stack.Screen
+          name='AgendarConsulta'
+          component={AgendarConsulta}
         />
 
       </Stack.Navigator>

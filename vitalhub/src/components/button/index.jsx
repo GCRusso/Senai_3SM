@@ -1,6 +1,7 @@
 import { TouchableHighlight } from "react-native"
-import { Button, ButtonTitle, ButtonGoogle, TitleGoogle, ButtonCon, TitleCon } from "./style"
+import { Button, ButtonTitle, ButtonGoogle, TitleGoogle, ButtonCon, TitleCon, Return  } from "./style"
 import { AntDesign } from '@expo/vector-icons';
+import { Feather } from '@expo/vector-icons';
 
 
 export const NormalButton = ({
@@ -33,5 +34,14 @@ export const ButtonConsulta = ({
         <ButtonCon>
             <TitleCon>{title}</TitleCon>
         </ButtonCon>
+    )
+}
+
+export const ButtonReturn = ({
+    onPress
+}) => {
+    return (
+            <Feather name="arrow-left-circle" size={30} color="#34898F" onPress={onPress} />
+       
     )
 }

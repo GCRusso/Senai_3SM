@@ -1,6 +1,8 @@
 import { Button, View } from "react-native";
 
 export const Navegacao = ({ navigation }) => {
+    
+    
     return (
         <View style={{ flex: 1, alignItems: "center", justifyContent: "space-around" }}>
 
@@ -34,6 +36,20 @@ export const Navegacao = ({ navigation }) => {
                 onPress={() => navigation.navigate("ConsultationModal")}
             />
 
+            <Button
+                title="SelecionarMedico"
+                onPress={() => navigation.navigate("SelecionarMedico")}
+            />
+
+            <Button
+                title="SelecionarClinica"
+                onPress={() => navigation.navigate("SelecionarClinica")}
+            />
+
+            <Button
+                title="AgendarConsulta"
+                onPress={() => navigation.navigate("AgendarConsulta")}
+            />
 
         </View>
     );

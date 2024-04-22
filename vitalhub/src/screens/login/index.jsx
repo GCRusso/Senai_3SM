@@ -4,7 +4,7 @@ import { Logo } from "../../components/logo/style"
 import { Container } from "../../components/container/style";
 import { InputText } from "../../components/input/style"
 import { NormalButton, GoogleButton } from "../../components/button/index.jsx";
-import { LinkMedium } from "../../components/links/Style.js";
+import { LinkMedium } from "../../components/links/index.jsx";
 import { Paragraph } from "../../components/paragraph/style.js";
 
 
@@ -44,9 +44,13 @@ export const Login = ({ navigation }) => {
             />
 
             <ViewText>
-                <Paragraph style={{ fontSize: 14 }}>Não tem conta?</Paragraph>
+                <Paragraph style={{ fontSize: 14, marginRight: 5 }}>Não tem conta?</Paragraph>
 
-                <LinkMedium style={{marginLeft: 5}}>Crie uma conta agora!</LinkMedium>
+                <LinkMedium 
+                title={'Crie uma conta agora!'}
+                onPress={() => navigation.navigate('CriarConta')}
+                
+                />
             </ViewText>
 
         </Container>

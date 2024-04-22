@@ -1,6 +1,11 @@
 import styled from "styled-components";
 
-export const LinkMedium =styled.Text`
+export const BoxLink = styled.View`
+justify-content: space-between;
+align-items: center;
+height: 75px;
+`
+export const TextLink = styled.Text`
     font-size: 14px;
     font-family: 'Montserrat_500Medium';
     text-decoration: underline;

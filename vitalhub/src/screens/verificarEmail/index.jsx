@@ -3,15 +3,26 @@ import { Title } from "../../components/title/style"
 import { Logo } from "../../components/logo/style"
 import { Container } from "../../components/container/style";
 import { InputNumber } from "../../components/input/style"
-import { NormalButton } from "../../components/button/index.jsx";
+import { ButtonReturn, NormalButton } from "../../components/button/index.jsx";
 import { Paragraph } from "../../components/paragraph/style.js";
-import { LinkMedium } from "../../components/links/Style.js";
+import { LinkMedium } from "../../components/links/index.jsx";
+import { ViewLogo } from "../recuperarSenha/style.js";
+import { BoxLink } from "../../components/links/Style.js";
 
 export const VerificarEmail = ({ navigation }) => {
     return (
         <Container>
+            <ViewLogo>
 
-            <Logo source={require("../../../assets/images/VitalHub_Logo.png")} />
+                <ButtonReturn
+                    onPress={() => navigation.navigate('RecuperarSenha')}
+                />
+
+                <Logo
+                    source={require("../../../assets/images/VitalHub_Logo.png")}
+                    style={{ bottom: 20 }}
+                />
+            </ViewLogo>
 
             <Title>Verifique seu E-mail</Title>
 
@@ -42,17 +53,18 @@ export const VerificarEmail = ({ navigation }) => {
 
             </ViewInput>
 
-            <NormalButton
-                title={'Entrar'}
-                onPress={() => navigation.navigate('RedefinirSenha')}
-            />
+        {/* Boxlink = para dar espaçamento entre o Button e LinkMedium, pois não daa para inserir STYLE direto em componente de botão */}
+            <BoxLink>
+                <NormalButton
+                    title={'Entrar'}
+                    onPress={() => navigation.navigate('RedefinirSenha')}
+                />
 
-            <LinkMedium style={{ marginTop: 30 }}>
-                Reenviar código
-            </LinkMedium>
+                <LinkMedium
+                    title={'Reenviar código'}
+                />
+            </BoxLink>
 
         </Container>
-
-
     )
 };
