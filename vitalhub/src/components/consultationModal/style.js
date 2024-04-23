@@ -1,11 +1,16 @@
 import styled from "styled-components";
-import { Modal } from "react-native";
+import  Modal  from "react-native-modal";
 
 export const ModalForm = styled(Modal)`
-    justify-content: center;
+    height: 70%;
+    width: 100%;
+    background-color: #FBFBFB;
+    border-radius: 10px 10px 0px 0px;
+    align-self: center;
     align-items: center;
-    border-radius: 5px;
-    background-color: #FFFFFF;
+    position: absolute;
+    bottom: 0px;
+    margin: 0px;
 `
 
 export const ModalHeader = styled.View`
@@ -24,5 +29,4 @@ export const ModalBody = styled.View`
 export const BoxButtons = styled.View`
     flex-direction: row;
     justify-content: space-between;
-    /* width:100%; */
 `

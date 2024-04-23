@@ -18,7 +18,7 @@ import { VerificarEmail } from './src/screens/verificarEmail';
 import { RedefinirSenha } from './src/screens/redefinirSenha';
 import { CriarConta } from './src/screens/criarConta';
 import { Navegacao } from './src/screens/navegacao';
-import { ConsultationModal } from './src/components/consultationModal';
+// import { ConsultationModal } from './src/components/consultationModal';
 import { SelecionarMedico } from './src/screens/selecionarMedico';
 import { SelecionarClinica } from './src/screens/selecionarClinica';
 import { AgendarConsulta} from './src/screens/agendarConsulta';
@@ -80,10 +80,10 @@ export default function App() {
           component={CriarConta}
         />
 
-        <Stack.Screen
+        {/* <Stack.Screen
           name='ConsultationModal'
           component={ConsultationModal}
-        />
+        /> */}
 
         <Stack.Screen
           name='SelecionarMedico'

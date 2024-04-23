@@ -31,10 +31,10 @@ export const Navegacao = ({ navigation }) => {
                 onPress={() => navigation.navigate("CriarConta")}
             />
 
-            <Button
+            {/* <Button
                 title="ConsultationModal"
                 onPress={() => navigation.navigate("ConsultationModal")}
-            />
+            /> */}
 
             <Button
                 title="SelecionarMedico"

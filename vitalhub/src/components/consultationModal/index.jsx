@@ -7,14 +7,18 @@ import { LinkMedium } from "../links";
 import { BoxLink } from "../links/Style";
 import { TouchableOpacity } from "react-native";
 
+
 export const ConsultationModal = ({
     visible,
-    navigation
+    navigation,
+    onClose
 
 }) => {
     return (
 
-        <ModalForm>
+        <ModalForm
+            isVisible = {visible}
+        >
 
             <ModalHeader>
                 <Title style={{ fontSize: 20 }}>Agendar consulta</Title>
@@ -25,7 +29,6 @@ export const ConsultationModal = ({
 
 
                 <BoxButtons>
-
                     <ButtonConsulta
                         title={'Rotina'}
                     />
@@ -52,12 +55,13 @@ export const ConsultationModal = ({
             <BoxLink>
                 <NormalButton
                     title={'Continuar'}
+                    onPress = {navigation}
                 />
 
                 <TouchableOpacity>
                     <LinkMedium
                         title={'Cancelar'}
-                        onPress={() => navigation.navigate("Login")}
+                        onPress={onClose}
                     />
                 </TouchableOpacity>
             </BoxLink>

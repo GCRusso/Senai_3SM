@@ -21,6 +21,7 @@
     "react-native": "0.73.6",
     "react-native-calendar-strip": "^2.2.6",
     "react-native-calendars": "^1.1304.1",
+    "react-native-modal": "^13.0.1",
     "react-native-select-dropdown": "^4.0.1",
     "styled-components": "^6.1.8"
   },

@@ -6,60 +6,75 @@ import { LinkMedium } from "../../components/links/index.jsx";
 import { Medico } from "../../components/medicoCard/index.jsx";
 import { ImageMedico } from "../../components/medicoCard/style.js";
 import { BoxMedicoView, MedicoCardView } from "./style.js";
+import { ConsultationModal } from "../../components/consultationModal/index.jsx";
+import { useState } from "react";
 
 export const SelecionarMedico = ({ navigation }) => {
+
+    const [modal, setModal] = useState(false);
+
+
     return (
-        <Container>
+        <>
 
-            <Title>Selecionar médico</Title>
+            <Container>
 
-            <MedicoCardView>
-                {/* Médico 1 */}
-                <BoxMedicoView>
-                    <ImageMedico source={require("../../../assets/images/DraAlessandra.png")} />
+                <Title>Selecionar médico</Title>
 
-                    <Medico
-                        title={'Dra Alessandra'}
-                        paragraph={'Dermatologa, Esteticista'}
+                <MedicoCardView>
+                    {/* Médico 1 */}
+                    <BoxMedicoView>
+                        <ImageMedico source={require("../../../assets/images/DraAlessandra.png")} />
+
+                        <Medico
+                            title={'Dra Alessandra'}
+                            paragraph={'Dermatologa, Esteticista'}
+                        />
+                    </BoxMedicoView>
+
+
+                    {/* Médico 2 */}
+                    <BoxMedicoView>
+                        <ImageMedico source={require("../../../assets/images/DrKumushiro.png")} />
+
+                        <Medico
+                            title={'Dr Kumushiro'}
+                            paragraph={'Cirurgião, Cardiologista'}
+                        />
+                    </BoxMedicoView>
+
+
+                    {/* Médico 3 */}
+                    <BoxMedicoView>
+                        <ImageMedico source={require("../../../assets/images/DrRodrigo.png")} />
+
+                        <Medico
+                            title={'Dr Rodrigo Santos'}
+                            paragraph={'Clínico, Pediatra'}
+                        />
+                    </BoxMedicoView>
+                </MedicoCardView>
+
+                <BoxLink>
+                    <NormalButton
+                        title={'Continuar'}
+                        onPress={() => setModal(true)}
                     />
-                </BoxMedicoView>
 
-
-                {/* Médico 2 */}
-                <BoxMedicoView>
-                    <ImageMedico source={require("../../../assets/images/DrKumushiro.png")} />
-
-                    <Medico
-                        title={'Dr Kumushiro'}
-                        paragraph={'Cirurgião, Cardiologista'}
+                    <LinkMedium
+                        title={'Cancelar'}
+                        onPress={() => navigation.navigate("Navegacao")}
                     />
-                </BoxMedicoView>
+                </BoxLink>
 
+            </Container>
 
-                {/* Médico 3 */}
-                <BoxMedicoView>
-                    <ImageMedico source={require("../../../assets/images/DrRodrigo.png")} />
+            <ConsultationModal
+                visible={modal}
+                onClose={() => setModal(false)}
+                navigation={ () => navigation.navigate("Login")}
+            />
 
-                    <Medico
-                        title={'Dr Rodrigo Santos'}
-                        paragraph={'Clínico, Pediatra'}
-                    />
-                </BoxMedicoView>
-            </MedicoCardView>
-
-            <BoxLink>
-                <NormalButton
-                    title={'Continuar'}
-                    onPress={() => navigation.navigate("SelecionarMedico")}
-                />
-
-                <LinkMedium
-                    title={'Cancelar'}
-                    onPress={() => navigation.navigate("Navegacao")}
-                />
-            </BoxLink>
-
-        </Container>
-
+        </>
     )
 };

@@ -5,6 +5,7 @@ import { BoxLink } from "../../components/links/Style.js";
 import { LinkMedium } from "../../components/links/index.jsx";
 import { Paragraph } from "../../components/paragraph/style.js"
 import { InputText } from "../../components/input/style.js";
+import { CalendarApp } from "../../components/calendarApp/CalendarApp.jsx";
 
 
 
@@ -16,6 +17,8 @@ export const AgendarConsulta = ({ navigation }) => {
 
             <Paragraph>Selecione um horário disponível</Paragraph>
 
+            <CalendarApp/>
+            
             <InputText
                 placeholder={"Selecionar horário"}
                 placeholderTextColor={'#60BFC5'}
