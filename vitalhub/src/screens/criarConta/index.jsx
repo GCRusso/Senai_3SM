@@ -57,7 +57,7 @@ export const CriarConta = ({ navigation }) => {
             <BoxLink>
                 <NormalButton
                     title={'Cadastrar'}
-                    onPress={() => navigation.navigate('Login')}
+                    onPress={() => navigation.navigate('SelecionarClinica')}
                 />
 
                 <LinkMedium

@@ -5,30 +5,36 @@ import { BoxLink } from "../../components/links/Style.js";
 import { LinkMedium } from "../../components/links/index.jsx";
 import { Paragraph } from "../../components/paragraph/style.js"
 import { InputText } from "../../components/input/style.js";
-import { CalendarApp } from "../../components/calendarApp/CalendarApp.jsx";
-
+import { CalendarApp } from "../../components/CalendarApp/CalendarApp.jsx"
 
 
 export const AgendarConsulta = ({ navigation }) => {
     return (
         <Container>
 
-            <Title>Selecionar data</Title>
+            <Title
+            style = {{marginBottom:35}}
+            >Selecionar data</Title>
 
-            <Paragraph>Selecione um horário disponível</Paragraph>
+            <CalendarApp />
 
-            <CalendarApp/>
-            
+            <Paragraph
+                style={{ marginRight: 75, marginBottom: 10, marginTop: 30 }}
+            >
+                Selecione um horário disponível
+            </Paragraph>
+
             <InputText
                 placeholder={"Selecionar horário"}
                 placeholderTextColor={'#60BFC5'}
                 autoCapitalize={'none'}
+                style={{ marginBottom: 42 }}
             />
 
             <BoxLink>
                 <NormalButton
                     title={'Continuar'}
-                    onPress={() => navigation.navigate("SelecionarMedico")}
+                    onPress={() => navigation.navigate("Login")}
                 />
 
                 <LinkMedium

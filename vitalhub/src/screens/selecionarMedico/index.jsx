@@ -72,7 +72,7 @@ export const SelecionarMedico = ({ navigation }) => {
             <ConsultationModal
                 visible={modal}
                 onClose={() => setModal(false)}
-                navigation={ () => navigation.navigate("Login")}
+                navigation={ () => navigation.navigate("AgendarConsulta")}
             />
 
         </>

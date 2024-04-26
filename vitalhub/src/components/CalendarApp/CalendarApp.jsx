@@ -1,6 +1,5 @@
 import { Calendar, LocaleConfig } from "react-native-calendars";
 import { StyleSheet } from "react-native";
-import { AntDesign } from '@expo/vector-icons';
 import { useState } from "react";
 
 
@@ -35,7 +34,6 @@ export const CalendarApp = ({
     return (
         <>
             <Calendar
-                //style={{marginBottom: 10}}
                 onDayPress={day => {
                     setSelected(day.dateString);
                 }}
