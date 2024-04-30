@@ -1,5 +1,4 @@
 import { Calendar, LocaleConfig } from "react-native-calendars";
-import { StyleSheet } from "react-native";
 import { useState } from "react";
 
 
@@ -45,6 +44,3 @@ export const CalendarApp = ({
         </>
     )
 }
-
-const styles = StyleSheet.create({
-})

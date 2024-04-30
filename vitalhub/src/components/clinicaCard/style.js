@@ -41,8 +41,6 @@ export const TextWeek = styled.Text`
 
 
 
-
-
 /* NOME DA CLINICA */
 export const TitleClinica = styled.Text`
     font-size: 16px;

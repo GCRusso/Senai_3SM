@@ -10,6 +10,5 @@ export const BoxMedicoView = styled.View`
 `
 
 export const MedicoCardView = styled.View`
-margin-bottom: 72px;
-margin-top: 35px;
+
 `

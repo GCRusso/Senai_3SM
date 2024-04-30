@@ -8,52 +8,52 @@ import { ImageMedico } from "../../components/medicoCard/style.js";
 import { BoxMedicoView, MedicoCardView } from "./style.js";
 import { ConsultationModal } from "../../components/consultationModal/index.jsx";
 import { useState } from "react";
+import { FlatList, SafeAreaView } from "react-native";
 
 export const SelecionarMedico = ({ navigation }) => {
 
     const [modal, setModal] = useState(false);
 
+    const Data = [
+        {
+            title: 'Dra. Alessandra',
+        },
+        {
+            title: 'Dr. Kumushiro',
+        },
+        {
+            title: 'Dr. Rodrigo Santos',
+        },
+    ];
+
+    const Item = ({ title }) => (
+
+            <BoxMedicoView>
+                <ImageMedico source={require("../../../assets/images/DraAlessandra.png")} />
+
+                <Medico
+                    title={title}
+
+                />
+            </BoxMedicoView>
+
+    );
 
     return (
         <>
-
             <Container>
 
                 <Title>Selecionar médico</Title>
 
                 <MedicoCardView>
-                    {/* Médico 1 */}
-                    <BoxMedicoView>
-                        <ImageMedico source={require("../../../assets/images/DraAlessandra.png")} />
-
-                        <Medico
-                            title={'Dra Alessandra'}
-                            paragraph={'Dermatologa, Esteticista'}
+                        <FlatList
+                            data={Data}
+                            renderItem={({ item }) => <Item title={item.title} />}
+                            keyExtractor={item => item.id}
                         />
-                    </BoxMedicoView>
 
-
-                    {/* Médico 2 */}
-                    <BoxMedicoView>
-                        <ImageMedico source={require("../../../assets/images/DrKumushiro.png")} />
-
-                        <Medico
-                            title={'Dr Kumushiro'}
-                            paragraph={'Cirurgião, Cardiologista'}
-                        />
-                    </BoxMedicoView>
-
-
-                    {/* Médico 3 */}
-                    <BoxMedicoView>
-                        <ImageMedico source={require("../../../assets/images/DrRodrigo.png")} />
-
-                        <Medico
-                            title={'Dr Rodrigo Santos'}
-                            paragraph={'Clínico, Pediatra'}
-                        />
-                    </BoxMedicoView>
                 </MedicoCardView>
+
 
                 <BoxLink>
                     <NormalButton
@@ -72,7 +72,7 @@ export const SelecionarMedico = ({ navigation }) => {
             <ConsultationModal
                 visible={modal}
                 onClose={() => setModal(false)}
-                navigation={ () => navigation.navigate("AgendarConsulta")}
+                navigation={() => navigation.navigate("AgendarConsulta")}
             />
 
         </>

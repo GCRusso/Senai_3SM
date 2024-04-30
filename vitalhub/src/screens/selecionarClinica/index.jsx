@@ -3,52 +3,72 @@ import { NormalButton } from "../../components/button/index.jsx";
 import { LinkMedium } from "../../components/links/index.jsx";
 import { BoxLink } from "../../components/links/Style.js";
 import { Clinica } from "../../components/clinicaCard/index.jsx";
-import { ClinicaView } from "./style.js";
-import { Container} from "../../components/container/style.js"
-
+import { ClinicaView, RenderView } from "./style.js";
+import { Container } from "../../components/container/style.js"
 
 
 export const SelecionarClinica = ({ navigation }) => {
+
+    const clinicas = [
+        {
+            id: 1,
+            title: 'Clínica Natureh',
+            paragraph: 'São Paulo, SP',
+            star: '4,5',
+            week: 'Seg - Sex',
+            onPress: () => navigation.navigate("SelecionarMedico")
+        },
+        {
+            id: 2,
+            title: 'Diamond Pró-Mulher',
+            paragraph: 'São Paulo, SP',
+            star: '4,8',
+            week: 'Seg - Sex',
+            onPress: () => navigation.navigate("SelecionarMedico")
+        },
+        {
+            id: 3,
+            title: 'Clinica Villa Lobos',
+            paragraph: 'Taboão, SP',
+            star: '4,2',
+            week: 'Seg - Sab',
+            onPress: () => navigation.navigate("SelecionarMedico")
+        },
+        {
+            id: 4,
+            title: 'SP Oncologia Clínica',
+            paragraph: 'Taboão, SP',
+            star: '4,2',
+            week: 'Seg - Sab',
+            onPress: () => navigation.navigate("SelecionarMedico")
+        },
+        {
+            id: 5,
+            title: 'Pediatria Happy',
+            paragraph: 'Tatuapé, SP',
+            star: '4,9',
+            week: 'Seg - Sab',
+            onPress: () => navigation.navigate("SelecionarMedico")
+        },
+    ];
+
     return (
 
         <Container>
 
             <Title>Selecionar clínica</Title>
 
-            <ClinicaView>
-                <Clinica
-
-                    title={'Clínica Natureh'}
-                    paragraph={'São Paulo, SP'}
-                    star={'4,5'}
-                    week={'Seg - Sex'}
-                    onPress={() => navigation.navigate("SelecionarMedico")}
-                />
-
-                <Clinica
-                    title={'Diamond Pró-Mulher'}
-                    paragraph={'São Paulo, SP'}
-                    star={'4,8'}
-                    week={'Seg - Sex'}
-                    onPress={() => navigation.navigate("SelecionarMedico")}
-                />
-
-                <Clinica
-                    title={'Clinica Villa Lobos'}
-                    paragraph={'Taboão, SP'}
-                    star={'4,2'}
-                    week={'Seg - Sáb'}
-                    onPress={() => navigation.navigate("SelecionarMedico")}
-                />
-
-                <Clinica
-                    title={'SP Oncologia Clínica'}
-                    paragraph={'Taboão, SP'}
-                    star={'4,2'}
-                    week={'Seg - Sáb'}
-                    onPress={() => navigation.navigate("SelecionarMedico")}
-                />
-            </ClinicaView>
+            <ClinicaView
+                data={clinicas}
+                keyExtractor={(item) => item.id}
+                renderItem={({ item }) =>
+                    <Clinica
+                        title={item.title}
+                        star={item.star}
+                        week={item.week}
+                        paragraph={item.paragraph}
+                    />}
+            />
 
             <BoxLink>
                 <NormalButton

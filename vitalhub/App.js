@@ -4,7 +4,7 @@ import { TouchableOpacity } from "react-native"
 
 //Import de Fonts
 import { useFonts, Montserrat_500Medium, Montserrat_800ExtraBold, } from '@expo-google-fonts/montserrat';
-import { Quicksand_500Medium } from '@expo-google-fonts/quicksand';
+import { Quicksand_500Medium, Quicksand_700Bold } from '@expo-google-fonts/quicksand';
 
 
 //Import Navigation, para navegação entre páginas
@@ -21,7 +21,7 @@ import { Navegacao } from './src/screens/navegacao';
 // import { ConsultationModal } from './src/components/consultationModal';
 import { SelecionarMedico } from './src/screens/selecionarMedico';
 import { SelecionarClinica } from './src/screens/selecionarClinica';
-import { AgendarConsulta} from './src/screens/agendarConsulta';
+import { SelecionarData } from './src/screens/selecionarData';
 
 
 export default function App() {
@@ -33,7 +33,8 @@ export default function App() {
   const [fontLoaded, fontError] = useFonts({
     Montserrat_500Medium,
     Montserrat_800ExtraBold,
-    Quicksand_500Medium
+    Quicksand_500Medium,
+    Quicksand_700Bold 
 
   })
 
@@ -96,8 +97,8 @@ export default function App() {
         />
 
         <Stack.Screen
-          name='AgendarConsulta'
-          component={AgendarConsulta}
+          name='SelecionarData'
+          component={SelecionarData}
         />
 
       </Stack.Navigator>
