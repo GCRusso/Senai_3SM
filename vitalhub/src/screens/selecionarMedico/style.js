@@ -3,12 +3,14 @@ import styled from "styled-components";
 export const BoxMedicoView = styled.View`
     border-radius: 5px;
     align-items: center;
-    flex-direction: row;
     justify-content: center;
-    width: 320px;
+    width: 100%;
     height: 102px;
+    margin-bottom: 12px;
 `
 
-export const MedicoCardView = styled.View`
-
+export const MedicoCardView = styled.FlatList`
+    max-height: 50%;
+    margin-top: 45px;
+    margin-bottom: 45px;
 `

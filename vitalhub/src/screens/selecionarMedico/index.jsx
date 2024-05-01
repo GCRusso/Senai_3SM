@@ -4,40 +4,47 @@ import { NormalButton } from "../../components/button/index.jsx";
 import { BoxLink } from "../../components/links/Style.js";
 import { LinkMedium } from "../../components/links/index.jsx";
 import { Medico } from "../../components/medicoCard/index.jsx";
-import { ImageMedico } from "../../components/medicoCard/style.js";
 import { BoxMedicoView, MedicoCardView } from "./style.js";
 import { ConsultationModal } from "../../components/consultationModal/index.jsx";
 import { useState } from "react";
-import { FlatList, SafeAreaView } from "react-native";
 
 export const SelecionarMedico = ({ navigation }) => {
 
     const [modal, setModal] = useState(false);
 
-    const Data = [
+    const medicos = [
         {
+            id: 1,
             title: 'Dra. Alessandra',
+            paragraph: 'Demartologa, Esteticista',
         },
+
         {
+            id: 2,
             title: 'Dr. Kumushiro',
+            paragraph: 'Cirurgião, Cardiologista',
         },
+
         {
+            id: 3,
             title: 'Dr. Rodrigo Santos',
+            paragraph: 'Clínico, Pediatra',
         },
+
+        {
+            id: 4,
+            title: 'Dr. Carla Frozen',
+            paragraph: 'Oncologista',
+        },
+
+        {
+            id: 5,
+            title: 'Dr. Maria Luiza',
+            paragraph: 'Ortopedista',
+        },
+   
     ];
 
-    const Item = ({ title }) => (
-
-            <BoxMedicoView>
-                <ImageMedico source={require("../../../assets/images/DraAlessandra.png")} />
-
-                <Medico
-                    title={title}
-
-                />
-            </BoxMedicoView>
-
-    );
 
     return (
         <>
@@ -45,14 +52,19 @@ export const SelecionarMedico = ({ navigation }) => {
 
                 <Title>Selecionar médico</Title>
 
-                <MedicoCardView>
-                        <FlatList
-                            data={Data}
-                            renderItem={({ item }) => <Item title={item.title} />}
-                            keyExtractor={item => item.id}
-                        />
+                <MedicoCardView
+                    data={medicos}
+                    keyExtractor={(item) => item.id}
+                    renderItem={({ item }) =>
+                        <BoxMedicoView>
+                            <Medico
+                                title={item.title}
+                                paragraph={item.paragraph}
+                            />
+                        </BoxMedicoView>}
+                />
 
-                </MedicoCardView>
+
 
 
                 <BoxLink>
