@@ -18,11 +18,10 @@ import { VerificarEmail } from './src/screens/verificarEmail';
 import { RedefinirSenha } from './src/screens/redefinirSenha';
 import { CriarConta } from './src/screens/criarConta';
 import { Navegacao } from './src/screens/navegacao';
-// import { ConsultationModal } from './src/components/consultationModal';
 import { SelecionarMedico } from './src/screens/selecionarMedico';
 import { SelecionarClinica } from './src/screens/selecionarClinica';
 import { SelecionarData } from './src/screens/selecionarData';
-
+import { LocalClinica } from './src/screens/localClinica';
 
 export default function App() {
 
@@ -34,7 +33,7 @@ export default function App() {
     Montserrat_500Medium,
     Montserrat_800ExtraBold,
     Quicksand_500Medium,
-    Quicksand_700Bold 
+    Quicksand_700Bold
 
   })
 
@@ -81,10 +80,6 @@ export default function App() {
           component={CriarConta}
         />
 
-        {/* <Stack.Screen
-          name='ConsultationModal'
-          component={ConsultationModal}
-        /> */}
 
         <Stack.Screen
           name='SelecionarMedico'
@@ -99,6 +94,11 @@ export default function App() {
         <Stack.Screen
           name='SelecionarData'
           component={SelecionarData}
+        />
+
+        <Stack.Screen
+          name='LocalClinica'
+          component={LocalClinica}
         />
 
       </Stack.Navigator>

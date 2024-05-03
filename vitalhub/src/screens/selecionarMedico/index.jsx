@@ -33,13 +33,13 @@ export const SelecionarMedico = ({ navigation }) => {
 
         {
             id: 4,
-            title: 'Dr. Carla Frozen',
+            title: 'Dra. Carla Frozen',
             paragraph: 'Oncologista',
         },
 
         {
             id: 5,
-            title: 'Dr. Maria Luiza',
+            title: 'Dra. Maria Luiza',
             paragraph: 'Ortopedista',
         },
    
@@ -84,7 +84,7 @@ export const SelecionarMedico = ({ navigation }) => {
             <ConsultationModal
                 visible={modal}
                 onClose={() => setModal(false)}
-                navigation={() => navigation.navigate("AgendarConsulta")}
+                navigation={() => navigation.navigate("SelecionarData")}
             />
 
         </>

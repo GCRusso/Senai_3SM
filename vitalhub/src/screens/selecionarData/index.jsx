@@ -59,7 +59,7 @@ export const SelecionarData = ({ navigation }) => {
             <AgendarConsultaModal
                 visible={modal}
                 onClose={() => setModal(false)}
-                navigation={() => navigation.navigate("Login")}
+                navigation={() => navigation.navigate("LocalClinica")}
             />
 
         </>
