@@ -1,8 +1,8 @@
-import { TouchableHighlight } from "react-native"
-import { Button, ButtonTitle, ButtonGoogle, TitleGoogle, ButtonCon, TitleCon, Return  } from "./style"
+import { Button, ButtonTitle, ButtonGoogle, TitleGoogle, ButtonCon, TitleCon, Return, BoxButtonEnviar } from "./style"
 import { AntDesign } from '@expo/vector-icons';
 import { Feather } from '@expo/vector-icons';
-
+import { Text } from "react-native";
+import { MaterialCommunityIcons } from '@expo/vector-icons';
 
 export const NormalButton = ({
     title,
@@ -41,7 +41,25 @@ export const ButtonReturn = ({
     onPress
 }) => {
     return (
-            <Feather name="arrow-left-circle" size={30} color="#34898F" onPress={onPress} />
-       
+        <Feather name="arrow-left-circle" size={30} color="#34898F" onPress={onPress} />
+
+    )
+}
+
+
+export const ButtonEnviar = ({
+    title,
+    onPress
+}) => {
+    return (
+        <BoxButtonEnviar onPress={onPress}>
+            <MaterialCommunityIcons name="camera-plus-outline" size={24} color="white" />
+            <Text style={{
+                color: '#FFFF',
+                fontFamily: 'Montserrat_800ExtraBold',
+                fontSize: 14,
+                marginLeft:10
+            }}>{title}</Text>
+        </BoxButtonEnviar>
     )
 }

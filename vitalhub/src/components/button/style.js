@@ -52,5 +52,16 @@ export const TitleCon = styled.Text`
 `
 
 export const Return = styled.TouchableOpacity`
-position: fixed;
+    position: fixed;
 `
+
+export const BoxButtonEnviar = styled.TouchableOpacity`
+    height: 44px;
+    width: 172px;
+    background-color: #49B3BA;
+    border-radius: 5px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+`
+

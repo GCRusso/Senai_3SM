@@ -1,6 +1,3 @@
-import { StyleSheet, Text, View, TextInput } from 'react-native';
-import { TouchableOpacity } from "react-native"
-
 
 //Import de Fonts
 import { useFonts, Montserrat_500Medium, Montserrat_800ExtraBold, } from '@expo-google-fonts/montserrat';
@@ -22,6 +19,7 @@ import { SelecionarMedico } from './src/screens/selecionarMedico';
 import { SelecionarClinica } from './src/screens/selecionarClinica';
 import { SelecionarData } from './src/screens/selecionarData';
 import { LocalClinica } from './src/screens/localClinica';
+import { DadosConsulta } from './src/screens/dadosConsulta';
 
 export default function App() {
 
@@ -34,7 +32,6 @@ export default function App() {
     Montserrat_800ExtraBold,
     Quicksand_500Medium,
     Quicksand_700Bold
-
   })
 
   //Validação das fontes
@@ -44,7 +41,6 @@ export default function App() {
 
 
   return (
-
     <NavigationContainer>
 
       <Stack.Navigator screenOptions={{ headerShown: false }}>
@@ -99,6 +95,11 @@ export default function App() {
         <Stack.Screen
           name='LocalClinica'
           component={LocalClinica}
+        />
+
+        <Stack.Screen
+          name='DadosConsulta'
+          component={DadosConsulta}
         />
 
       </Stack.Navigator>
