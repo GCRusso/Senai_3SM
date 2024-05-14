@@ -1,4 +1,4 @@
-import { Button, ButtonTitle, ButtonGoogle, TitleGoogle, ButtonCon, TitleCon, Return, BoxButtonEnviar } from "./style"
+import { Button, ButtonTitle, ButtonGoogle, TitleGoogle, ButtonCon, TitleCon, BoxButtonEnviar, BoxOptions, TextOptions } from "./style"
 import { AntDesign } from '@expo/vector-icons';
 import { Feather } from '@expo/vector-icons';
 import { Text } from "react-native";
@@ -58,8 +58,20 @@ export const ButtonEnviar = ({
                 color: '#FFFF',
                 fontFamily: 'Montserrat_800ExtraBold',
                 fontSize: 14,
-                marginLeft:10
+                marginLeft: 10
             }}>{title}</Text>
         </BoxButtonEnviar>
+    )
+}
+
+export const OptionsButton = ({
+    title,
+    onPress,
+    activate = false
+}) => {
+    return (
+        <BoxOptions activate={activate} onPress={onPress}>
+            <TextOptions activate={activate}>{title}</TextOptions>
+        </BoxOptions>
     )
 }

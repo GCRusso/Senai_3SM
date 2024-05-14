@@ -65,3 +65,18 @@ export const BoxButtonEnviar = styled.TouchableOpacity`
     flex-direction: row;
 `
 
+export const BoxOptions = styled.TouchableOpacity`
+    width: 100px;
+    height: 40px;
+    background-color: ${props => props.activate ? "#607EC5" : "#FBFBFB"};
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #607EC5;
+    border-radius: 8px;
+    `
+
+export const TextOptions = styled.Text`
+    font-size: 14px;
+    color: ${props => props.activate ? "#FBFBFB" : "#607EC5"};
+    font-family: 'Montserrat_800ExtraBold';
+`

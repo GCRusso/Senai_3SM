@@ -20,6 +20,7 @@ import { SelecionarClinica } from './src/screens/selecionarClinica';
 import { SelecionarData } from './src/screens/selecionarData';
 import { LocalClinica } from './src/screens/localClinica';
 import { DadosConsulta } from './src/screens/dadosConsulta';
+import { HomePaciente } from './src/screens/homePaciente';
 
 export default function App() {
 
@@ -100,6 +101,11 @@ export default function App() {
         <Stack.Screen
           name='DadosConsulta'
           component={DadosConsulta}
+        />
+
+        <Stack.Screen
+          name='HomePaciente'
+          component={HomePaciente}
         />
 
       </Stack.Navigator>
