@@ -80,3 +80,13 @@ export const TextOptions = styled.Text`
     color: ${props => props.activate ? "#FBFBFB" : "#607EC5"};
     font-family: 'Montserrat_800ExtraBold';
 `
+
+export const BoxModalHome  = styled.TouchableOpacity`
+    height: 60px;
+    width: 60px;
+    background-color: #49B3BA;
+    border-radius: 10px;
+    align-items: center;
+    justify-content: center;
+    margin-top: 13px;
+`

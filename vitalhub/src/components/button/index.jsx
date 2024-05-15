@@ -1,8 +1,9 @@
-import { Button, ButtonTitle, ButtonGoogle, TitleGoogle, ButtonCon, TitleCon, BoxButtonEnviar, BoxOptions, TextOptions } from "./style"
+import { Button, ButtonTitle, ButtonGoogle, TitleGoogle, ButtonCon, TitleCon, BoxButtonEnviar, BoxOptions, TextOptions, BoxModalHome } from "./style"
 import { AntDesign } from '@expo/vector-icons';
 import { Feather } from '@expo/vector-icons';
 import { Text } from "react-native";
 import { MaterialCommunityIcons } from '@expo/vector-icons';
+import { FontAwesome5 } from '@expo/vector-icons';
 
 export const NormalButton = ({
     title,
@@ -73,5 +74,15 @@ export const OptionsButton = ({
         <BoxOptions activate={activate} onPress={onPress}>
             <TextOptions activate={activate}>{title}</TextOptions>
         </BoxOptions>
+    )
+}
+
+export const ButtonModalHome = ({
+    onPress
+ }) => {
+    return (
+        <BoxModalHome onPress={onPress}>
+            <FontAwesome5 name="stethoscope" size={27} color="white" />
+        </BoxModalHome>
     )
 }

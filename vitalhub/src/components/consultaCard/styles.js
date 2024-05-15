@@ -1,6 +1,4 @@
 import styled from "styled-components"
-import { TouchableOpacity } from "react-native"
-
 
 /* CAIXA DE ALINHAMENTO GERAL BACKGROUND */
 export const BoxCard = styled.View`
@@ -41,19 +39,24 @@ export const AlignBox = styled.View`
 export const BoxButtons = styled.TouchableOpacity`
     width: 100px;
     height: 26px;
-    background-color: #E8FCFD;
+    background-color: ${props => `#${props.color}`};
     border-radius: 5px;
     flex-direction: row;
     align-items: center;
     justify-content: center;
     margin-top: 11px;
 `
+export const TextCancel = styled.Text`
+    color: ${props => `#${props.color}`};
+    font-family: 'Montserrat_800ExtraBold';
+    font-size: 14px;
+`
 
-export const TextButtons = styled.Text`
+export const TextHour = styled.Text`
+    color: ${props => `#${props.color}`};
     font-family: 'Montserrat_800ExtraBold';
     font-size: 14px;
     margin-left: 5px;
-    color: #49B3BA
 `
 
 

@@ -1,20 +1,25 @@
 import { Container } from "../../components/container/style"
 import { Paragraph } from "../../components/paragraph/style"
 import { Title } from "../../components/title/style"
-import { View, Image } from "react-native"
+import { View, Image, Text } from "react-native"
 import { Feather } from '@expo/vector-icons';
 import { useState } from "react";
-
+import { FontAwesome5 } from '@expo/vector-icons';
+import { FontAwesome6 } from '@expo/vector-icons';
+import { TouchableOpacity } from "react-native";
+import { ConsultationModal } from "../../components/consultationModal";
 import { CalendarHome } from "../../components/calendarHome";
 
-import { BackgroundGradient, CardList } from "./style"
+import { BackgroundGradient, CardList, ViewFooter } from "./style"
 
-import { OptionsButton } from "../../components/button";
+import { ButtonModalHome, OptionsButton } from "../../components/button";
 import { ConsultaCard } from "../../components/consultaCard";
 
 
 
 export const HomePaciente = ({ navigation }) => {
+
+    const [modal, setModal] = useState(false);
 
     const [statusLista, setStatusLista] = useState("pendente")
 
@@ -22,7 +27,7 @@ export const HomePaciente = ({ navigation }) => {
         {
             id: 1,
             title: 'Dra. Maria Luiza',
-            idade: '28 anos',
+            idade: '28',
             tipoConsulta: 'Rotina',
             hour: '14:00',
             situacao: 'realizado'
@@ -30,7 +35,7 @@ export const HomePaciente = ({ navigation }) => {
         {
             id: 2,
             title: 'Dr. Marcos Rodolfo',
-            idade: '45 anos',
+            idade: '45',
             tipoConsulta: 'Rotina',
             hour: '15:30',
             situacao: 'pendente'
@@ -38,7 +43,39 @@ export const HomePaciente = ({ navigation }) => {
         {
             id: 3,
             title: 'Dr. Angelo Martim',
-            idade: '54 anos',
+            idade: '54',
+            tipoConsulta: 'Cirurgia',
+            hour: '11:30',
+            situacao: 'cancelada'
+        },
+        {
+            id: 4,
+            title: 'Dr. Angelo Martim',
+            idade: '54',
+            tipoConsulta: 'Cirurgia',
+            hour: '11:30',
+            situacao: 'cancelada'
+        },
+        {
+            id: 5,
+            title: 'Dr. Angelo Martim',
+            idade: '54',
+            tipoConsulta: 'Cirurgia',
+            hour: '11:30',
+            situacao: 'cancelada'
+        },
+        {
+            id: 6,
+            title: 'Dr. Angelo Martim',
+            idade: '54',
+            tipoConsulta: 'Cirurgia',
+            hour: '11:30',
+            situacao: 'cancelada'
+        },
+        {
+            id: 7,
+            title: 'Dr. Angelo Martim',
+            idade: '54',
             tipoConsulta: 'Cirurgia',
             hour: '11:30',
             situacao: 'cancelada'
@@ -47,7 +84,6 @@ export const HomePaciente = ({ navigation }) => {
 
     return (
         <>
-
             <View style={{ flex: 1 }}>
 
                 {/* HEADER AZUL */}
@@ -73,7 +109,7 @@ export const HomePaciente = ({ navigation }) => {
                 <Container>
 
                     {/* BOTÕES SELEÇÃO DE LISTA */}
-                    <View style={{ flexDirection: 'row', justifyContent: 'space-between', width: 340 }}>
+                    <View style={{ flexDirection: 'row', justifyContent: 'space-between', width: 340, marginTop: 38 }}>
                         <OptionsButton
                             title={"Agendadas"}
                             activate={statusLista === "pendente"}
@@ -112,38 +148,58 @@ export const HomePaciente = ({ navigation }) => {
                         ) : statusLista == "realizado" ? (
 
                             <CardList
-                            data={consultas}
-                            keyExtractor={(item) => item.id}
-                            renderItem={({ item }) => item.situacao === "realizado" ?
-                                <ConsultaCard
-                                    title={item.title}
-                                    idade={item.idade}
-                                    tipoConsulta={item.tipoConsulta}
-                                    hour={item.hour}
-                                    situacao={item.situacao}
-                                /> : <></>}
-                        />
+                                data={consultas}
+                                keyExtractor={(item) => item.id}
+                                renderItem={({ item }) => item.situacao === "realizado" ?
+                                    <ConsultaCard
+                                        title={item.title}
+                                        idade={item.idade}
+                                        tipoConsulta={item.tipoConsulta}
+                                        hour={item.hour}
+                                        situacao={item.situacao}
+                                    /> : <></>}
+                            />
 
                         ) : (
 
                             <CardList
-                            data={consultas}
-                            keyExtractor={(item) => item.id}
-                            renderItem={({ item }) => item.situacao === "realizado" ?
-                                <ConsultaCard
-                                    title={item.title}
-                                    idade={item.idade}
-                                    tipoConsulta={item.tipoConsulta}
-                                    hour={item.hour}
-                                    situacao={item.situacao}
-                                /> : <></>}
-                        />
+                                data={consultas}
+                                keyExtractor={(item) => item.id}
+                                renderItem={({ item }) => item.situacao === "cancelada" ?
+                                    <ConsultaCard
+                                        title={item.title}
+                                        idade={item.idade}
+                                        tipoConsulta={item.tipoConsulta}
+                                        hour={item.hour}
+                                        situacao={item.situacao}
+                                    /> : <></>}
+                            />
                         )
                     }
-                   
+                    {/* BOTÃO MÉDICO ABERTURA MODAL */}
+                    <View style ={{ alignSelf : 'flex-end'}}>
+                        <ButtonModalHome onPress={() => setModal(true)} />
+                    </View>
 
                 </Container>
+
+                <ViewFooter>
+                    <TouchableOpacity style={{ width: 92, height: 33, backgroundColor: '#ECF2FF', borderRadius: 20, justifyContent: 'center', alignItems: 'center', flexDirection: 'row' }}>
+                        <FontAwesome6 name="calendar-check" size={22} color="#607EC5" />
+                        <Text style={{ color: '#607EC5', marginLeft: 5, fontSize: 12, fontFamily: 'Quicksand_500Medium' }}>Agenda</Text>
+                    </TouchableOpacity>
+
+                    <TouchableOpacity>
+                        <FontAwesome5 name="user-circle" size={24} color="black" />
+                    </TouchableOpacity>
+                </ViewFooter>
             </View >
+
+            <ConsultationModal
+                visible={modal}
+                onClose={() => setModal(false)}
+                navigation={() => navigation.navigate("SelecionarData")}
+            />
         </>
     )
 }
