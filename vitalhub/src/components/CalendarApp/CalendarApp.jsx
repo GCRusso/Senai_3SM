@@ -39,6 +39,7 @@ export const CalendarApp = ({
                 markedDates={{
                     [selected]: { selected: true, disableTouchEvent: true, selectedDotColor: 'orange' }
                 }}
+                style={{width: 320}}
             />
 
         </>

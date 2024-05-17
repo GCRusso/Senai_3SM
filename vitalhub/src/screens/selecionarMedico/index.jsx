@@ -6,11 +6,11 @@ import { LinkMedium } from "../../components/links/index.jsx";
 import { Medico } from "../../components/medicoCard/index.jsx";
 import { BoxMedicoView, MedicoCardView } from "./style.js";
 import { ConsultationModal } from "../../components/consultationModal/index.jsx";
-import { useState } from "react";
+
 
 export const SelecionarMedico = ({ navigation }) => {
 
-    const [modal, setModal] = useState(false);
+    
 
     const medicos = [
         {
@@ -70,7 +70,7 @@ export const SelecionarMedico = ({ navigation }) => {
                 <BoxLink>
                     <NormalButton
                         title={'Continuar'}
-                        onPress={() => setModal(true)}
+                        onPress={() => navigation.navigate("SelecionarData")}
                     />
 
                     <LinkMedium
@@ -80,12 +80,6 @@ export const SelecionarMedico = ({ navigation }) => {
                 </BoxLink>
 
             </Container>
-
-            <ConsultationModal
-                visible={modal}
-                onClose={() => setModal(false)}
-                navigation={() => navigation.navigate("SelecionarData")}
-            />
 
         </>
     )

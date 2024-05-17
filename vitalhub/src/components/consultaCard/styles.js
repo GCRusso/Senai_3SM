@@ -39,7 +39,7 @@ export const AlignBox = styled.View`
 export const BoxButtons = styled.TouchableOpacity`
     width: 100px;
     height: 26px;
-    background-color: ${props => `#${props.color}`};
+    background-color: ${props => `${props.color}`};
     border-radius: 5px;
     flex-direction: row;
     align-items: center;

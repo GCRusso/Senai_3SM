@@ -29,7 +29,7 @@ export const ConsultaCard = ({
                     {/* ÍCONE DO RELOGIO, MUDANÇA DE COR */}
                     <BoxButtons
                         situacao={situacao}
-                        color={situacao == "pendente" ? "E8FCFD" : "F1F0F5"}
+                        color={situacao == "pendente" ? "#E8FCFD" : "#F1F0F5"}
                     >
                         {
                             situacao == "pendente" ? (
@@ -71,7 +71,7 @@ export const ConsultaCard = ({
                             <BoxButtons
                                 situacao={situacao}
                                 onPress={onPress}
-                                color={'FFFF'}
+                                color={'#FFFF'}
                                 style={{ marginLeft: 13 }}
                             >
                                 <TextCancel
@@ -83,7 +83,7 @@ export const ConsultaCard = ({
                             < BoxButtons
                                 situacao={situacao}
                                 onPress={onPress}
-                                color={'FFFF'}
+                                color={'#FFFF'}
                                 style={{ marginLeft: 13 }}
                             >
                                 <TextCancel
