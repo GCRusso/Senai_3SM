@@ -2,7 +2,6 @@ import { useState } from "react";
 import { SelectBox, SelectTitle } from "./style";
 import { StyleSheet } from "react-native";
 import { AntDesign } from '@expo/vector-icons';
-import DropDownPicker from "react-native-dropdown-picker";
 import SelectDropdown from "react-native-select-dropdown";
 
 
@@ -22,9 +21,9 @@ export const Select = () => {
         <>
             <SelectDropdown
                     data={horarios}
-                    onSelect={(selectedItem, index) => {
-                        console.log(selectedItem, index);
-                    }}
+                    // onSelect={(selectedItem, index) => {
+                    //     console.log(selectedItem, index);
+                    // }}
                     defaultButtonText={'Selecionar horário'}
                     buttonTextAfterSelection={(selectedItem, index) => {
                         return selectedItem;
@@ -53,8 +52,6 @@ export const Select = () => {
                     rowTextStyle={styles.TxtRow}
 
             />
-
-
         </>
     )
 }

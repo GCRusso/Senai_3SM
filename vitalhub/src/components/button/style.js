@@ -3,7 +3,7 @@ import { Feather } from '@expo/vector-icons';
 
 
 export const Button = styled.TouchableOpacity`
-    width: 320px;
+    width: 90%;
     height: 44px;
     background-color: #496BBA;
     border: #496BBA;
@@ -11,6 +11,11 @@ export const Button = styled.TouchableOpacity`
     justify-content: center;
     border-radius: 5px;
     padding: 8px 12px;
+`
+export const ButtonCinza = styled(Button)`
+    background-color: #ACABB7;
+    border: none;
+    width: 60%;
 `
 
 export const ButtonTitle = styled.Text`
@@ -89,4 +94,18 @@ export const BoxModalHome  = styled.TouchableOpacity`
     align-items: center;
     justify-content: center;
     margin-top: 13px;
+`
+
+export const BoxIconCamera = styled.TouchableOpacity`
+    width: 50px;
+    height: 50px;
+    background-color: #496BBA;
+    border-radius: 10px;
+    border-width: 2px;
+    border-color: #FBFBFB;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    bottom: 25px;
+    left: 390px;
 `

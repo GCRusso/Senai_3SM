@@ -52,7 +52,6 @@ export const SelecionarData = ({ navigation }) => {
                         onPress={() => navigation.navigate("Navegacao")}
                     />
                 </BoxLink>
-
             </Container>
 
             {/* Inserindo o modal na tela, mas ainda não aparece esta como FALSE */}

@@ -1,9 +1,10 @@
-import { Button, ButtonTitle, ButtonGoogle, TitleGoogle, ButtonCon, TitleCon, BoxButtonEnviar, BoxOptions, TextOptions, BoxModalHome } from "./style"
+import { Button, ButtonTitle, ButtonGoogle, TitleGoogle, ButtonCon, TitleCon, BoxButtonEnviar, BoxOptions, TextOptions, BoxModalHome, ButtonCinza, BoxIconCamera } from "./style"
 import { AntDesign } from '@expo/vector-icons';
 import { Feather } from '@expo/vector-icons';
 import { Text } from "react-native";
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { FontAwesome5 } from '@expo/vector-icons';
+
 
 export const NormalButton = ({
     title,
@@ -13,6 +14,17 @@ export const NormalButton = ({
         <Button onPress={onPress}>
             <ButtonTitle>{title}</ButtonTitle>
         </Button>
+    )
+}
+
+export const NormalButtonCinza = ({
+    onPress,
+    title
+}) => {
+    return (
+        <ButtonCinza onPress={onPress}>
+            <ButtonTitle>{title}</ButtonTitle>
+        </ButtonCinza>
     )
 }
 
@@ -79,10 +91,20 @@ export const OptionsButton = ({
 
 export const ButtonModalHome = ({
     onPress
- }) => {
+}) => {
     return (
         <BoxModalHome onPress={onPress}>
             <FontAwesome5 name="stethoscope" size={27} color="white" />
         </BoxModalHome>
+    )
+}
+
+export const ButtonCamera = ({
+    onPress
+}) => {
+    return (
+        <BoxIconCamera>
+            <MaterialCommunityIcons name="camera-plus" size={24} color="white" />
+        </BoxIconCamera>
     )
 }

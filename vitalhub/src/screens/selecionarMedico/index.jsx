@@ -5,7 +5,7 @@ import { BoxLink } from "../../components/links/Style.js";
 import { LinkMedium } from "../../components/links/index.jsx";
 import { Medico } from "../../components/medicoCard/index.jsx";
 import { BoxMedicoView, MedicoCardView } from "./style.js";
-import { ConsultationModal } from "../../components/consultationModal/index.jsx";
+
 
 
 export const SelecionarMedico = ({ navigation }) => {

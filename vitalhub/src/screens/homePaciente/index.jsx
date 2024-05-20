@@ -7,11 +7,14 @@ import { useState } from "react";
 import { FontAwesome5 } from '@expo/vector-icons';
 import { FontAwesome6 } from '@expo/vector-icons';
 import { TouchableOpacity } from "react-native";
-import { ConsultationModal } from "../../components/consultationModal";
 import { CalendarHome } from "../../components/calendarHome";
 
-import { BackgroundGradient, CardList, ViewFooter } from "./style"
+//MODAIS
+import { ConsultationModal } from "../../components/consultationModal";
+import { MedicoModal } from "../../components/medicoModal";
+import { ProntuarioModal } from "../../components/prontuarioModal";
 
+import { BackgroundGradient, CardList, ViewFooter } from "./style"
 import { ButtonModalHome, OptionsButton } from "../../components/button";
 import { ConsultaCard } from "../../components/consultaCard";
 
@@ -20,6 +23,8 @@ import { ConsultaCard } from "../../components/consultaCard";
 export const HomePaciente = ({ navigation }) => {
 
     const [modal, setModal] = useState(false);
+    const [modalProntuario, setModalProntuario] = useState(false);
+    const [modalMedico, setModalMedico] = useState(false);
 
     const [statusLista, setStatusLista] = useState("pendente")
 
@@ -177,19 +182,19 @@ export const HomePaciente = ({ navigation }) => {
                         )
                     }
                     {/* BOTÃO MÉDICO ABERTURA MODAL */}
-                    <View style ={{ alignSelf : 'flex-end'}}>
+                    <View style={{ alignSelf: 'flex-end' }}>
                         <ButtonModalHome onPress={() => setModal(true)} />
                     </View>
 
                 </Container>
 
                 <ViewFooter>
-                    <TouchableOpacity style={{ width: 92, height: 33, backgroundColor: '#ECF2FF', borderRadius: 20, justifyContent: 'center', alignItems: 'center', flexDirection: 'row' }}>
+                    <TouchableOpacity onPress={() => setModalProntuario(true)} style={{ width: 92, height: 33, backgroundColor: '#ECF2FF', borderRadius: 20, justifyContent: 'center', alignItems: 'center', flexDirection: 'row' }}>
                         <FontAwesome6 name="calendar-check" size={22} color="#607EC5" />
                         <Text style={{ color: '#607EC5', marginLeft: 5, fontSize: 12, fontFamily: 'Quicksand_500Medium' }}>Agenda</Text>
                     </TouchableOpacity>
 
-                    <TouchableOpacity>
+                    <TouchableOpacity onPress={() => setModalMedico(true)}>
                         <FontAwesome5 name="user-circle" size={24} color="black" />
                     </TouchableOpacity>
                 </ViewFooter>
@@ -199,6 +204,18 @@ export const HomePaciente = ({ navigation }) => {
                 visible={modal}
                 onClose={() => setModal(false)}
                 navigation={() => navigation.navigate("SelecionarData")}
+            />
+
+            <ProntuarioModal
+                visible={modalProntuario}
+                onClose={() => setModalProntuario(false)}
+                navigation={() => navigation.navigate("SelecionarData")}
+            />
+
+            <MedicoModal
+                visible={modalMedico}
+                onClose={() => setModalMedico(false)}
+                navigation={() => navigation.navigate("LocalClinica")}
             />
         </>
     )
