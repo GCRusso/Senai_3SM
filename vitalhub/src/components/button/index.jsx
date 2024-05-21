@@ -1,4 +1,4 @@
-import { Button, ButtonTitle, ButtonGoogle, TitleGoogle, ButtonCon, TitleCon, BoxButtonEnviar, BoxOptions, TextOptions, BoxModalHome, ButtonCinza, BoxIconCamera } from "./style"
+import { Button, ButtonTitle, ButtonGoogle, TitleGoogle, ButtonCon, TitleCon, BoxButtonEnviar, BoxOptions, TextOptions, BoxModalHome, ButtonCinza, BoxIconCamera, ButtonCinzaG } from "./style"
 import { AntDesign } from '@expo/vector-icons';
 import { Feather } from '@expo/vector-icons';
 import { Text } from "react-native";
@@ -25,6 +25,17 @@ export const NormalButtonCinza = ({
         <ButtonCinza onPress={onPress}>
             <ButtonTitle>{title}</ButtonTitle>
         </ButtonCinza>
+    )
+}
+
+export const NormalButtonCinzaG = ({
+    onPress,
+    title
+}) => {
+    return (
+        <ButtonCinzaG onPress={onPress}>
+            <ButtonTitle>{title}</ButtonTitle>
+        </ButtonCinzaG>
     )
 }
 

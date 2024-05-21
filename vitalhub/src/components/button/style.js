@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Feather } from '@expo/vector-icons';
+
 
 
 export const Button = styled.TouchableOpacity`
@@ -16,6 +16,10 @@ export const ButtonCinza = styled(Button)`
     background-color: #ACABB7;
     border: none;
     width: 60%;
+`
+
+export const ButtonCinzaG = styled(ButtonCinza)`
+    width: 90%;
 `
 
 export const ButtonTitle = styled.Text`
@@ -86,7 +90,7 @@ export const TextOptions = styled.Text`
     font-family: 'Montserrat_800ExtraBold';
 `
 
-export const BoxModalHome  = styled.TouchableOpacity`
+export const BoxModalHome = styled.TouchableOpacity`
     height: 60px;
     width: 60px;
     background-color: #49B3BA;

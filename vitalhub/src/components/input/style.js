@@ -35,3 +35,21 @@ export const InputDadosPacienteP = styled.TextInput`
     padding-left: 16px;
     padding-right: 16px;
 `
+
+export const InputPrescricaoG = styled.TextInput`
+    height: 121px;
+    width: 360px;
+    border-color: #49B3BA;
+    border-width: 2px;
+    border-radius: 8px;
+    background-color: #F5F3F3;
+
+    font-family: 'Montserrat_500Medium';
+    padding: 16px;
+    
+    
+`
+
+export const InputPrescricaoP = styled(InputPrescricaoG)`
+    height: 53px;
+`
