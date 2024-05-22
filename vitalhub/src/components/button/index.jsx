@@ -114,7 +114,7 @@ export const ButtonCamera = ({
     onPress
 }) => {
     return (
-        <BoxIconCamera>
+        <BoxIconCamera onPress={onPress}>
             <MaterialCommunityIcons name="camera-plus" size={24} color="white" />
         </BoxIconCamera>
     )

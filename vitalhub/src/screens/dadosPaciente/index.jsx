@@ -4,21 +4,21 @@ import { Title } from "../../components/title/style"
 import { View, ScrollView, Image, TouchableOpacity, Text } from "react-native";
 import { BoxInputG } from "./style";
 import { FontAwesome6, FontAwesome5 } from '@expo/vector-icons';
-
-
 import { ViewFooter } from "../homePaciente/style";
+
 
 import { ButtonCamera, NormalButton, NormalButtonCinza } from "../../components/button";
 
 export const DadosPaciente = ({ navigation }) => {
 
+      
     return (
         <ScrollView style={{backgroundColor: '#FFF'}}>
             <Container>
 
-                <View>
+                <View >
                     <Image style={{ maxHeight: 320 }} source={require("../../../assets/images/DRA.Maria_Luiza.jpg")} />
-                    <ButtonCamera />
+                    <ButtonCamera onPress={() => navigation.navigate("Camera")}/>
                 </View>
 
                 {/* NOME */}

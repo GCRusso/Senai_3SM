@@ -26,6 +26,8 @@ export const HomePaciente = ({ navigation }) => {
     const [modalProntuario, setModalProntuario] = useState(false);
     const [modalMedico, setModalMedico] = useState(false);
 
+    const [usuario, setUsuario] = useState("Paciente")
+
     const [statusLista, setStatusLista] = useState("pendente")
 
     const consultas = [
@@ -181,10 +183,18 @@ export const HomePaciente = ({ navigation }) => {
                             />
                         )
                     }
+
+
                     {/* BOTÃO MÉDICO ABERTURA MODAL */}
-                    <View style={{ alignSelf: 'flex-end' }}>
-                        <ButtonModalHome onPress={() => setModal(true)} />
-                    </View>
+                    {usuario == "Paciente" ? (
+                        <View style={{ alignSelf: 'flex-end' }}>
+                            <ButtonModalHome onPress={() => setModal(true)} />
+
+
+                        </View>
+                    ):(
+                    <></>
+                    )}
 
                 </Container>
 

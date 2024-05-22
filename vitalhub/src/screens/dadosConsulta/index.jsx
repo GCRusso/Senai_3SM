@@ -14,9 +14,8 @@ import { BsBorderWidth } from "react-icons/bs";
 
 export const DadosConsulta = ({ navigation }) => {
 
-    const [usuario, setUsuario] = useState("medico"
+    const [usuario, setUsuario] = useState("comum")
 
-    )
     return (
         <ScrollView>
             <Container style={{ backgroundColor: '#FFF' }}>
