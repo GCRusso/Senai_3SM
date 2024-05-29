@@ -5,20 +5,37 @@ import { View, ScrollView, Image, TouchableOpacity, Text } from "react-native";
 import { BoxInputG } from "./style";
 import { FontAwesome6, FontAwesome5 } from '@expo/vector-icons';
 import { ViewFooter } from "../homePaciente/style";
-
-
+import { useState } from "react";
 import { ButtonCamera, NormalButton, NormalButtonCinza } from "../../components/button";
 
-export const DadosPaciente = ({ navigation }) => {
+export const DadosPaciente = ({ navigation, route }) => {
+    const uri = route.params
+    const [photoTaked, setPhotoTaked] = useState(false)
 
-      
     return (
-        <ScrollView style={{backgroundColor: '#FFF'}}>
+        <ScrollView style={{ backgroundColor: '#FFF' }}>
             <Container>
 
+                {photoTaked ? (
+                    <View>
+
+                        <Image
+                         source={{ uri: `${uri}` }}
+
+                        />
+                        <ButtonCamera onPress={() => navigation.navigate("Camera")}/>
+                    </View>
+
+                ) : (
+                    <View>
+                        <Image style={{ maxHeight: 320 }} source={require("../../../assets/images/profile.png")} />
+                        <ButtonCamera onPress={() => navigation.navigate("Camera")} />
+                    </View>
+                )}
+
                 <View >
-                    <Image style={{ maxHeight: 320 }} source={require("../../../assets/images/DRA.Maria_Luiza.jpg")} />
-                    <ButtonCamera onPress={() => navigation.navigate("Camera")}/>
+
+
                 </View>
 
                 {/* NOME */}

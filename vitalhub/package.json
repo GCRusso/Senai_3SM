@@ -26,7 +26,8 @@
     "react-native-select-dropdown": "^3.4.0",
     "styled-components": "^6.1.8",
     "expo-linear-gradient": "~13.0.2",
-    "expo-camera": "~15.0.9"
+    "expo-camera": "~15.0.9",
+    "expo-media-library": "~16.0.3"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0"
