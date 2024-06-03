@@ -9,17 +9,15 @@ import { LinkMedium } from "../../components/links";
 
 import { useState } from "react";
 import { InputPrescricaoG, InputPrescricaoP, InputText } from "../../components/input/style";
-import { BsBorderWidth } from "react-icons/bs";
 
 
 export const DadosConsulta = ({ navigation }) => {
 
-    const [usuario, setUsuario] = useState("comum")
+    const [usuario, setUsuario] = useState("medico")
 
     return (
         <ScrollView>
             <Container style={{ backgroundColor: '#FFF' }}>
-            
 
                 {usuario == "medico" ? (
                     <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
@@ -27,7 +25,6 @@ export const DadosConsulta = ({ navigation }) => {
                         <View>
                             <Image style={{ maxHeight: 320 }} source={require("../../../assets/images/picturePaciente.png")} />
                         </View>
-
 
                         <Title style={{ marginBottom: 6 }}>Richard Kosta</Title>
 
@@ -82,6 +79,7 @@ export const DadosConsulta = ({ navigation }) => {
                             />
 
                             <LinkMedium
+                            onPress={() => navigation.replace('HomePaciente')}
                                 title='Cancelar'
                             />
 
@@ -91,7 +89,7 @@ export const DadosConsulta = ({ navigation }) => {
                     </View>
                 ) : (
 
-                    //***************************** PARTE DO USUÁRIO COMUM ******************************
+                    //***************************** PARTE DO PACIENTE ******************************
 
                     <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
 
@@ -162,13 +160,13 @@ export const DadosConsulta = ({ navigation }) => {
                         <View style={{ flexDirection: 'row', alignItems: 'center', width: 320 }}>
                             <ButtonEnviar
                                 title='Enviar'
-                                onPress={() => navigation.navigate("Login")}
+                                onPress={() => navigation.replace("Login")}
                             />
 
                             <View style={{ marginLeft: 60 }}>
                                 <LinkMedium
                                     title='Cancelar'
-                                    onPress={() => navigation.navigate('Login')}
+                                    onPress={() => navigation.replace('Login')}
                                 />
                             </View>
                         </View>
@@ -186,7 +184,7 @@ export const DadosConsulta = ({ navigation }) => {
                         <View style={{ marginBottom: 42, marginTop: 30 }}>
                             <LinkMedium
                                 title='Voltar'
-                                onPress={() => navigation.navigate('Login')}
+                                onPress={() => navigation.replace('HomePaciente')}
                             />
                         </View>
 

@@ -53,19 +53,18 @@ export const AgendarConsultaModal = ({
 
             </ModalBody>
 
-            <BoxLink>
-                <NormalButton
-                    title={'Confirmar'}
-                    onPress={navigation}
-                />
+            <NormalButton
+                title={'Confirmar'}
+                onPress={navigation}
+            />
 
-                <TouchableOpacity>
-                    <LinkMedium
-                        title={'Cancelar'}
-                        onPress={onClose}
-                    />
-                </TouchableOpacity>
-            </BoxLink>
+            <TouchableOpacity style={{marginTop:30}}>
+                <LinkMedium
+                    title={'Cancelar'}
+                    onPress={onClose}
+                />
+            </TouchableOpacity>
+
 
 
         </ModalForm>

@@ -110,7 +110,7 @@ export const DadosPaciente = ({ navigation, route }) => {
             </Container>
 
             <ViewFooter>
-                <TouchableOpacity style={{ width: 92, height: 33, backgroundColor: '#ECF2FF', borderRadius: 20, justifyContent: 'center', alignItems: 'center', flexDirection: 'row' }}>
+                <TouchableOpacity onPress={() => navigation.replace("HomePaciente")} style={{ width: 92, height: 33, backgroundColor: '#ECF2FF', borderRadius: 20, justifyContent: 'center', alignItems: 'center', flexDirection: 'row' }}>
                     <FontAwesome6 name="calendar-check" size={22} color="#607EC5" />
                     <Text style={{ color: '#607EC5', marginLeft: 5, fontSize: 12, fontFamily: 'Quicksand_500Medium' }}>Agenda</Text>
                 </TouchableOpacity>

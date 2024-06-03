@@ -3,7 +3,6 @@
 import { useFonts, Montserrat_500Medium, Montserrat_800ExtraBold, } from '@expo-google-fonts/montserrat';
 import { Quicksand_500Medium, Quicksand_700Bold } from '@expo-google-fonts/quicksand';
 
-
 //Import Navigation, para navegação entre páginas
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';

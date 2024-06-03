@@ -1,7 +1,7 @@
 import { Title } from "../../components/title/style"
 import { NormalButton } from "../../components/button/index.jsx";
 import { LinkMedium } from "../../components/links/index.jsx";
-import { BoxLink } from "../../components/links/Style.js";
+import { View } from "react-native";
 import { Clinica } from "../../components/clinicaCard/index.jsx";
 import { ClinicaView, RenderView } from "./style.js";
 import { Container } from "../../components/container/style.js"
@@ -70,17 +70,19 @@ export const SelecionarClinica = ({ navigation }) => {
                     />}
             />
 
-            <BoxLink>
-                <NormalButton
-                    title={'Continuar'}
-                    onPress={() => navigation.navigate("SelecionarMedico")}
-                />
 
+            <NormalButton
+                title={'Continuar'}
+                onPress={() => navigation.replace("SelecionarMedico")}
+            />
+
+            <View style={{marginTop:30}}>
                 <LinkMedium
                     title={'Cancelar'}
-                    onPress={() => navigation.navigate("Navegacao")}
+                    onPress={() => navigation.replace("HomePaciente")}
                 />
-            </BoxLink>
+            </View>
+
 
 
         </Container>

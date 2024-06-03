@@ -13,8 +13,7 @@ export const RedefinirSenha = ({ navigation }) => {
             <ViewLogo>
 
                 <ButtonReturn
-                    onPress={() => navigation.navigate('VerificarEmail')}
-
+                    onPress={() => navigation.replace('Login')}
                 />
 
                 <Logo
@@ -46,7 +45,7 @@ export const RedefinirSenha = ({ navigation }) => {
 
             <NormalButton
                 title={'Confirmar nova senha'}
-                onPress={() => navigation.navigate("CriarConta")}
+                onPress={() => navigation.replace('Login')}
             />
 
         </Container>

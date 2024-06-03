@@ -1,7 +1,7 @@
 import { Title } from "../../components/title/style"
 import { Container } from "../../components/container/style";
 import { NormalButton } from "../../components/button/index.jsx";
-import { BoxLink } from "../../components/links/Style.js";
+import { View } from "react-native";
 import { LinkMedium } from "../../components/links/index.jsx";
 import { Medico } from "../../components/medicoCard/index.jsx";
 import { BoxMedicoView, MedicoCardView } from "./style.js";
@@ -10,7 +10,7 @@ import { BoxMedicoView, MedicoCardView } from "./style.js";
 
 export const SelecionarMedico = ({ navigation }) => {
 
-    
+
 
     const medicos = [
         {
@@ -42,7 +42,7 @@ export const SelecionarMedico = ({ navigation }) => {
             title: 'Dra. Maria Luiza',
             paragraph: 'Ortopedista',
         },
-   
+
     ];
 
 
@@ -64,20 +64,17 @@ export const SelecionarMedico = ({ navigation }) => {
                         </BoxMedicoView>}
                 />
 
+                <NormalButton
+                    title={'Continuar'}
+                    onPress={() => navigation.replace("SelecionarData")}
+                />
 
-
-
-                <BoxLink>
-                    <NormalButton
-                        title={'Continuar'}
-                        onPress={() => navigation.navigate("SelecionarData")}
-                    />
-
+                <View style={{marginTop:30}}>
                     <LinkMedium
                         title={'Cancelar'}
-                        onPress={() => navigation.navigate("Navegacao")}
+                        onPress={() => navigation.replace("HomePaciente")}
                     />
-                </BoxLink>
+                </View>
 
             </Container>
 

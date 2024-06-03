@@ -15,7 +15,7 @@ export const VerificarEmail = ({ navigation }) => {
             <ViewLogo>
 
                 <ButtonReturn
-                    onPress={() => navigation.navigate('RecuperarSenha')}
+                    onPress={() => navigation.replace('RecuperarSenha')}
                 />
 
                 <Logo
@@ -57,7 +57,7 @@ export const VerificarEmail = ({ navigation }) => {
             <BoxLink>
                 <NormalButton
                     title={'Entrar'}
-                    onPress={() => navigation.navigate('RedefinirSenha')}
+                    onPress={() => navigation.replace('RedefinirSenha')}
                 />
 
                 <LinkMedium

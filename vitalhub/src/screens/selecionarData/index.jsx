@@ -1,7 +1,7 @@
 import { Title } from "../../components/title/style.js"
 import { Container } from "../../components/container/style.js";
 import { NormalButton } from "../../components/button/index.jsx";
-import { BoxLink } from "../../components/links/Style.js";
+import { View } from "react-native";
 import { LinkMedium } from "../../components/links/index.jsx";
 import { Paragraph } from "../../components/paragraph/style.js"
 import { CalendarApp } from "../../components/CalendarApp/CalendarApp.jsx"
@@ -39,26 +39,30 @@ export const SelecionarData = ({ navigation }) => {
                 </Paragraph>
 
                 <Select />
+                
+                <View style={{ marginTop: 30 }} />
 
-                <BoxLink style ={{marginTop:35}}>
-                    <NormalButton
-                        title={'Continuar'}
-                        /* Setando o modal como TRUE neste botão */
-                        onPress={() => setModal(true)}
-                    />
+                <NormalButton
+                    title={'Confirmar'}
+                    /* Setando o modal como TRUE neste botão */
+                    onPress={() => setModal(true)}
+                />
 
+
+                <View style={{ marginTop: 30 }}>
                     <LinkMedium
                         title={'Cancelar'}
-                        onPress={() => navigation.navigate("Navegacao")}
+                        onPress={() => navigation.replace("HomePaciente")}
                     />
-                </BoxLink>
+                </View>
+
             </Container>
 
             {/* Inserindo o modal na tela, mas ainda não aparece esta como FALSE */}
             <AgendarConsultaModal
                 visible={modal}
                 onClose={() => setModal(false)}
-                navigation={() => navigation.navigate("LocalClinica")}
+                navigation={() => navigation.replace("HomePaciente")}
             />
 
         </>

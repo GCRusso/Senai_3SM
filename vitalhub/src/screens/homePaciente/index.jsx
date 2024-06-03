@@ -11,13 +11,11 @@ import { CalendarHome } from "../../components/calendarHome";
 
 //MODAIS
 import { ConsultationModal } from "../../components/consultationModal";
-import { MedicoModal } from "../../components/medicoModal";
-import { ProntuarioModal } from "../../components/prontuarioModal";
+
 
 import { BackgroundGradient, CardList, ViewFooter } from "./style"
 import { ButtonModalHome, OptionsButton } from "../../components/button";
 import { ConsultaCard } from "../../components/consultaCard";
-
 
 
 export const HomePaciente = ({ navigation }) => {
@@ -26,7 +24,7 @@ export const HomePaciente = ({ navigation }) => {
     const [modalProntuario, setModalProntuario] = useState(false);
     const [modalMedico, setModalMedico] = useState(false);
 
-    const [usuario, setUsuario] = useState("Paciente")
+    const [usuario, setUsuario] = useState("Medico")
 
     const [statusLista, setStatusLista] = useState("pendente")
 
@@ -94,17 +92,20 @@ export const HomePaciente = ({ navigation }) => {
             <View style={{ flex: 1 }}>
 
                 {/* HEADER AZUL */}
+
                 <BackgroundGradient colors={['#60BFC5', '#496BBA']}>
+                    <TouchableOpacity style={{flexDirection: 'row' }} onPress={() => navigation.replace("DadosPaciente")}>
 
-                    <Image style={{ maxHeight: 60 }} source={require("../../../assets/images/fotoPerfil.png")} />
+                        <Image style={{ maxHeight: 60 }} source={require("../../../assets/images/fotoPerfil.png")} />
 
-                    <View style={{ marginLeft: 10, marginRight: 108 }}>
-                        <Paragraph>Bem Vindo</Paragraph>
-                        <Title style={{ color: '#FFF' }}>Gabriel Russo</Title>
-                    </View>
+                        <View style={{ marginLeft: 10, marginRight: 108 }}>
+                            <Paragraph>Bem Vindo</Paragraph>
+                            <Title style={{ color: '#FFF' }}>Gabriel Russo</Title>
+                        </View>
 
+
+                    </TouchableOpacity>
                     <Feather name="bell" size={30} color="white" />
-
                 </BackgroundGradient>
 
 
@@ -192,41 +193,31 @@ export const HomePaciente = ({ navigation }) => {
 
 
                         </View>
-                    ):(
-                    <></>
+                    ) : (
+                        <></>
                     )}
 
                 </Container>
 
                 <ViewFooter>
-                    <TouchableOpacity onPress={() => setModalProntuario(true)} style={{ width: 92, height: 33, backgroundColor: '#ECF2FF', borderRadius: 20, justifyContent: 'center', alignItems: 'center', flexDirection: 'row' }}>
+                    <TouchableOpacity style={{ width: 92, height: 33, backgroundColor: '#ECF2FF', borderRadius: 20, justifyContent: 'center', alignItems: 'center', flexDirection: 'row' }}>
                         <FontAwesome6 name="calendar-check" size={22} color="#607EC5" />
                         <Text style={{ color: '#607EC5', marginLeft: 5, fontSize: 12, fontFamily: 'Quicksand_500Medium' }}>Agenda</Text>
                     </TouchableOpacity>
 
-                    <TouchableOpacity onPress={() => setModalMedico(true)}>
+                    <TouchableOpacity onPress={() => navigation.replace("DadosPaciente")}>
                         <FontAwesome5 name="user-circle" size={24} color="black" />
                     </TouchableOpacity>
                 </ViewFooter>
+
             </View >
 
             <ConsultationModal
                 visible={modal}
                 onClose={() => setModal(false)}
-                navigation={() => navigation.navigate("SelecionarData")}
+                navigation={() => navigation.replace("SelecionarClinica")}
             />
 
-            <ProntuarioModal
-                visible={modalProntuario}
-                onClose={() => setModalProntuario(false)}
-                navigation={() => navigation.navigate("SelecionarData")}
-            />
-
-            <MedicoModal
-                visible={modalMedico}
-                onClose={() => setModalMedico(false)}
-                navigation={() => navigation.navigate("LocalClinica")}
-            />
         </>
     )
 }

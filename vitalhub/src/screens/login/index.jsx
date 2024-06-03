@@ -4,9 +4,9 @@ import { Logo } from "../../components/logo/style"
 import { Container } from "../../components/container/style";
 import { InputText } from "../../components/input/style"
 import { NormalButton, GoogleButton } from "../../components/button/index.jsx";
-import { LinkMedium } from "../../components/links/index.jsx";
+import { LinkMedium, LinkMediumGrey } from "../../components/links/index.jsx";
 import { Paragraph } from "../../components/paragraph/style.js";
-
+import { View } from "react-native";
 
 export const Login = ({ navigation }) => {
     return (
@@ -29,14 +29,19 @@ export const Login = ({ navigation }) => {
                 secureTextEntry={true}
                 placeholderTextColor={'#34898F'}
                 autoCapitalize={'none'}
+
             />
-            <LinkMedium style={{marginTop:15, marginBottom:25, marginRight: 160, color:'#8C8A97'}}>
-                Esqueceu sua senha?
-            </LinkMedium>
+
+            <View style= {{marginTop:10, marginBottom:30, alignSelf:'flex-start', marginLeft:15}}>
+                <LinkMediumGrey
+                    onPress={() => navigation.replace('RecuperarSenha')}
+                    title={"Esqueceu sua senha?"}
+                />
+            </View>
 
             <NormalButton
                 title={'Entrar'}
-                onPress={() => navigation.navigate('RecuperarSenha')}
+            // onPress={() => navigation.navigate('RecuperarSenha')}
             />
 
             <GoogleButton
@@ -46,10 +51,9 @@ export const Login = ({ navigation }) => {
             <ViewText>
                 <Paragraph style={{ fontSize: 14, marginRight: 5 }}>Não tem conta?</Paragraph>
 
-                <LinkMedium 
-                title={'Crie uma conta agora!'}
-                onPress={() => navigation.navigate('CriarConta')}
-                
+                <LinkMedium
+                    title={'Crie uma conta agora!'}
+                    onPress={() => navigation.replace('CriarConta')}
                 />
             </ViewText>
 

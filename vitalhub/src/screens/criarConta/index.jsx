@@ -2,27 +2,20 @@ import { Title } from "../../components/title/style"
 import { Logo } from "../../components/logo/style"
 import { Container } from "../../components/container/style";
 import { InputText } from "../../components/input/style"
-import { ButtonReturn, NormalButton } from "../../components/button/index.jsx";
+import { NormalButton } from "../../components/button/index.jsx";
 import { Paragraph } from "../../components/paragraph/style.js";
 import { LinkMedium } from "../../components/links/index.jsx";
-import { ViewLogo } from "../recuperarSenha/style.js";
-import { BoxLink } from "../../components/links/Style.js";
+import { View } from "react-native";
+
 
 export const CriarConta = ({ navigation }) => {
     return (
         <Container>
 
-            <ViewLogo>
-                <ButtonReturn
-                    onPress={() => navigation.navigate('RedefinirSenha')}
-                />
-
-                <Logo
-                    source={require("../../../assets/images/VitalHub_Logo.png")}
-                    style={{ bottom: 20 }}
-                />
-
-            </ViewLogo>
+            <Logo
+                source={require("../../../assets/images/VitalHub_Logo.png")}
+                style={{ bottom: 20 }}
+            />
 
             <Title>Criar conta</Title>
 
@@ -53,19 +46,18 @@ export const CriarConta = ({ navigation }) => {
                 style={{ marginBottom: 30 }}
             />
 
-             {/* Boxlink = para dar espaçamento entre o Button e LinkMedium, pois não daa para inserir STYLE direto em componente de botão */}
-            <BoxLink>
-                <NormalButton
-                    title={'Cadastrar'}
-                    onPress={() => navigation.navigate('SelecionarClinica')}
-                />
+            {/* Boxlink = para dar espaçamento entre o Button e LinkMedium, pois não daa para inserir STYLE direto em componente de botão */}
+            <NormalButton
+                title={'Cadastrar'}
+                onPress={() => navigation.replace('Login')}
+            />
 
+            <View style={{marginTop:30}}>
                 <LinkMedium
                     title={'Cancelar'}
-                    onPress={() => navigation.navigate('Login')}
+                    onPress={() => navigation.replace('Login')}
                 />
-            </BoxLink>
-
+            </View>
 
         </Container>
 

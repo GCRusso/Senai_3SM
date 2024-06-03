@@ -17,7 +17,7 @@ export const ConsultationModal = ({
     return (
 
         <ModalForm
-            isVisible = {visible}
+            isVisible={visible}
         >
 
             <ModalHeader>
@@ -47,24 +47,24 @@ export const ConsultationModal = ({
                     placeholder={"Informe a localização"}
                     placeholderTextColor={'#60BFC5'}
                     autoCapitalize={'none'}
-                    
+
                 />
 
             </ModalBody>
 
-            <BoxLink>
-                <NormalButton
-                    title={'Continuar'}
-                    onPress = {navigation}
-                />
 
-                <TouchableOpacity>
-                    <LinkMedium
-                        title={'Cancelar'}
-                        onPress={onClose}
-                    />
-                </TouchableOpacity>
-            </BoxLink>
+            <NormalButton
+                title={'Continuar'}
+                onPress={navigation}
+            />
+
+            <TouchableOpacity style ={{marginTop:30}}>
+                <LinkMedium
+                    title={'Cancelar'}
+                    onPress={onClose}
+                />
+            </TouchableOpacity>
+
 
 
         </ModalForm>

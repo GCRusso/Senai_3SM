@@ -11,12 +11,9 @@ export const RecuperarSenha = ({ navigation }) => {
     return (
 
         <Container>
-
-
             <ViewLogo>
                 <ButtonReturn
-                    onPress={() => navigation.navigate('Login')}
-
+                    onPress={() => navigation.replace('Login')}
                 />
 
                 <Logo 
@@ -42,8 +39,7 @@ export const RecuperarSenha = ({ navigation }) => {
 
             <NormalButton
                 title={'Continuar'}
-                onPress={() => navigation.navigate('VerificarEmail')}
-
+                onPress={() => navigation.replace('VerificarEmail')}
             />
 
         </Container>

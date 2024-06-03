@@ -12,3 +12,7 @@ export const TextLink = styled.Text`
     color: #4D659D;
     margin-left: 2px;
 `
+
+export const TextLinkGrey = styled(TextLink)`
+    color: #8C8A97;
+`
