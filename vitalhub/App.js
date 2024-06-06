@@ -22,6 +22,7 @@ import { DadosConsulta } from './src/screens/dadosConsulta';
 import { HomePaciente } from './src/screens/homePaciente';
 import { DadosPaciente } from './src/screens/dadosPaciente';
 import { Camera } from './src/screens/camera';
+import { Mapa } from './src/screens/Mapa';
 
 export default function App() {
 
@@ -117,7 +118,12 @@ export default function App() {
         <Stack.Screen
           name='Camera'
           component={Camera}
-        /> 
+        />
+
+        <Stack.Screen
+          name='Mapa'
+          component={Mapa}
+        />
 
       </Stack.Navigator>
 

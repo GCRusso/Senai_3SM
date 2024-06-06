@@ -70,7 +70,11 @@ export const Navegacao = ({ navigation }) => {
                 title="Camera"
                 onPress={() => navigation.navigate("Camera")}
             />
-
+            
+            <Button
+                title="Mapa"
+                onPress={() => navigation.navigate("Mapa")}
+            />
 
         </View>
     );

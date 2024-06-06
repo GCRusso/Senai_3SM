@@ -1,10 +1,10 @@
-import { Button, ButtonTitle, ButtonGoogle, TitleGoogle, ButtonCon, TitleCon, BoxButtonEnviar, BoxOptions, TextOptions, BoxModalHome, ButtonCinza, BoxIconCamera, ButtonCinzaG } from "./style"
+import { Button, ButtonTitle, ButtonGoogle, TitleGoogle, ButtonCon, TitleCon, BoxButtonEnviar, BoxOptions, TextOptions, BoxModalHome, ButtonCinza, BoxIconCamera, ButtonCinzaG, BoxIconMapa } from "./style"
 import { AntDesign } from '@expo/vector-icons';
 import { Feather } from '@expo/vector-icons';
 import { Text } from "react-native";
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { FontAwesome5 } from '@expo/vector-icons';
-
+import { MaterialIcons } from '@expo/vector-icons';
 
 export const NormalButton = ({
     title,
@@ -117,5 +117,16 @@ export const ButtonCamera = ({
         <BoxIconCamera onPress={onPress}>
             <MaterialCommunityIcons name="camera-plus" size={24} color="white" />
         </BoxIconCamera>
+    )
+}
+
+
+export const ButtonMapa = ({
+    onPress
+}) => {
+    return (
+        <BoxIconMapa onPress={onPress}>
+            <MaterialIcons name="zoom-out-map" size={24} color="White" />
+        </BoxIconMapa>
     )
 }

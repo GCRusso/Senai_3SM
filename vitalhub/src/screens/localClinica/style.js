@@ -8,7 +8,7 @@ export const AdressView = styled.View`
     align-items: center;
 
 `
-export const ImageView = styled.Image`
+export const ImageView = styled.View`
     width: 110%;
     height: 50%;
 `
@@ -36,3 +36,4 @@ export const NumberCityView = styled.View`
     justify-content: space-between;
     margin-bottom: 35px;
 `
+

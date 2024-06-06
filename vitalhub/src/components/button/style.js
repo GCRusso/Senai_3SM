@@ -113,3 +113,17 @@ export const BoxIconCamera = styled.TouchableOpacity`
     bottom: 25px;
     left: 390px;
 `
+
+export const BoxIconMapa = styled.TouchableOpacity`
+    width: 50px;
+    height: 50px;
+    background-color: #496BBA;
+    border-radius: 10px;
+    border-width: 2px;
+    border-color: #FBFBFB;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    bottom: 80px;
+    left: 320px;
+`

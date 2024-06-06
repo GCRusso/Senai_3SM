@@ -3,14 +3,20 @@ import { Paragraph } from "../../components/paragraph/style"
 import { Container } from "../../components/container/style";
 import { AdressView, BoxAdress, ImageView, NumberCityView, ColumnView, StreetView } from "./style";
 import { LinkMedium } from "../../components/links/index"
-import { Mapa } from "../../components/mapa";
-
+import { Image } from "react-native";
+import { ButtonMapa } from "../../components/button";
 
 export const LocalClinica = ({ navigation }) => {
 
     return (
+
         <Container>
-             <Mapa />
+
+            <ImageView>
+                <Image style={{ height: 450, width: 400 }} source={require("../../../assets/images/mapa.jpg")} />
+                <ButtonMapa onPress={() => navigation.replace('Mapa')}/>
+            </ImageView>
+
 
             <AdressView>
 
@@ -57,5 +63,6 @@ export const LocalClinica = ({ navigation }) => {
 
 
         </Container>
+
     )
 };
