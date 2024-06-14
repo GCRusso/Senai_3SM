@@ -6,7 +6,7 @@ import { MaterialIcons } from '@expo/vector-icons';
 import { FlashMode } from 'expo-camera/build/legacy/Camera.types';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { Ionicons } from '@expo/vector-icons';
-import { PhotoTaked } from '../../components/photo/Photo';
+
 
 
 export const Camera = ({ navigation, route }) => {
@@ -90,12 +90,7 @@ export const Camera = ({ navigation, route }) => {
                     </View>
                 </CameraView>
             </View>
-            <PhotoTaked
-                RequestSave={savePicture}
-                uriPhoto={capturedPhoto}
-                visible={modalPhoto}
-                onRequestClose={() => setModalPhoto(false)}
-            />
+
         </>
     );
 }
